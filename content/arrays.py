@@ -1,4 +1,9 @@
 import json
+
+def load_data(filename):
+    with open(f"data/{filename}", "r") as file:
+        return json.load(file)
+    
 def arrays_content():
     while True:
         print("\n========== Arrays ==========")
@@ -10,8 +15,9 @@ def arrays_content():
         choice = input("Enter your choice: ")
         
         if choice == '1':
-            print("Array is a collection of elements stored in contigous memory.")
-        
+            data = load_data("theory.json")       
+            print("\n" + data["arrays"])
+            
         elif choice == '2':
             print("\nPython Example: ")
             print("arr = [1,2,3,4]")
