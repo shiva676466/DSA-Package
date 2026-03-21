@@ -1,0 +1,29 @@
+{
+  "arrays": [
+    "Reverse an array",
+    "Find maximum element in array",
+    "Rotate array by k positions",
+    "Find second largest element",
+    "Check if array is sorted",
+    "Find minimum element in array",
+    "Find sum of all elements",
+    "Find average of array elements",
+    "Search an element using linear search",
+    "Search an element using binary search",
+    "Find frequency of each element",
+    "Remove duplicates from array",
+    "Merge two sorted arrays",
+    "Find intersection of two arrays",
+    "Find union of two arrays",
+    "Find missing number in array",
+    "Find duplicate number in array",
+    "Move all zeros to end",
+    "Rearrange array in alternating positive and negative numbers",
+    "Find subarray with maximum sum (Kadane’s algorithm)",
+    "Find subarray with given sum",
+    "Count inversions in array",
+    "Sort an array using quicksort",
+    "Sort an array using mergesort",
+    "Find majority element in array"
+  ]
+}

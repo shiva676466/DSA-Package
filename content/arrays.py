@@ -1,3 +1,4 @@
+import json
 def arrays_content():
     while True:
         print("\n========== Arrays ==========")
@@ -28,7 +29,7 @@ def arrays_content():
             
 def show_questions():
     try:
-        with open("data/questions.json", "r") as file:
+        with open("data/questions/questions.json", "r") as file:
             data = json.load(file)
             
         questions = data.get("arrays", [])
