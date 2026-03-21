@@ -25,6 +25,11 @@
     "Sort an array using quicksort",
     "Sort an array using mergesort",
     "Find majority element in array"
+  ],
+  "strings": [
+    "Reverse a string",
+    "Check palindrome",
+    "Count vowels"
   ]
 }
 
