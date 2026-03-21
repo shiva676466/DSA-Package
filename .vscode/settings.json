@@ -1,0 +1,9 @@
+{
+    "gitlens.heatmap.ageThreshold": 91,
+    "gitlens.currentLine.uncommittedChangesFormat": "✏️ ${ago}",
+    "gitlens.codeLens.scopes": [
+        "document",
+        "containers"
+    ],
+    "git.ignoreLimitWarning": true
+}
