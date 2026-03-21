@@ -26,5 +26,18 @@ def arrays_content():
             print("Invalid Choice")
             
             
-def show_questions()
+def show_questions():
+    try:
+        with open("data/questions.json", "r") as file:
+            data = json.load(file)
+            
+        questions = data.get("arrays", [])
+        
+        print("\n===== Arrays =====")
+        
+        for i, q in enumerate(questions, 1):
+            print(f"{i}. {q}")
+            
+    except Exception as e:
+        print("Error loading questions: ", e)
             
