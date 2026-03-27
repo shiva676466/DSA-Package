@@ -1,5 +1,6 @@
 from content.arrays import arrays_content
 from content.strings import strings_content
+from content.stacks import stacks_content
 
 
 def beginner_topics():
@@ -19,7 +20,7 @@ def beginner_topics():
         elif choice == '2':
             strings_content()
         elif choice == '3':
-            print("Coming Soon.")
+            stacks_content()
         elif choice == '4':
             print("Coming Soon.")
         elif choice == '5':
