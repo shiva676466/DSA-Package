@@ -11,6 +11,6 @@ def stacks_content():
         choice = input("Enter your choice: ")
         
         if choice == '1':
-            print("")
+            print("Coming Soon..!")
         elif choice == '2':
             print("\n--- Stack Code Examples ---")
