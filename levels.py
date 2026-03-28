@@ -19,9 +19,5 @@ def select_level():
 
 # added change inside the sample branch
 
-<<<<<<< HEAD
-# /added spme changes in the sample branch
-=======
 # /added spme changes in the sample branch
 #shiva is bhosadi
->>>>>>> origin/sampleBranch
