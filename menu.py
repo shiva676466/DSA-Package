@@ -14,4 +14,4 @@ def main_menu():
             print("Exiting....!")
             break
         else:
-            print("Invalid Choice")
+            print("Invalid Choice, please enter '1' or '2'")
