@@ -1,5 +1,6 @@
 import json
 
+# load data function
 def load_data(filename):
     with open(f"data/{filename}", "r") as file:
         return json.load(file)
