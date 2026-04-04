@@ -4,7 +4,8 @@ import json
 def load_data(filename):
     with open(f"data/{filename}", "r") as file:
         return json.load(file)
-    
+
+# arrays content function
 def arrays_content():
     while True:
         print("\n========== Arrays ==========")
