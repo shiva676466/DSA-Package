@@ -1,5 +1,5 @@
 {
   "arrays": "📦 Array is a collection of elements stored in contiguous memory. \n🔹 All elements are of the same data type. \n🔹 Each element can be accessed using an index (starting from 0). \n🔹 Arrays allow fast access (O(1)) but insertion/deletion can be costly. \n🚀 Common operations include traversal, insertion, deletion, and searching.",
   "strings": "🔤 String is a sequence of characters. \n🔹 Strings can be immutable (like in Python) or mutable depending on the language. \n🔹 Each character has an index. \n🔹 Common operations include concatenation, slicing, searching, and comparison. \n✨ Strings are widely used in text processing and pattern matching.",
-  "stack": "Stacks is a linear DS."
+  "stack": "📚 Stack is a linear data structure that follows the LIFO (Last In, First Out) principle. \n🔹 The last element inserted is the first one to be removed. \n🔹 Basic operations include push (insert), pop (remove), and peek/top (view top element). \n🔹 All operations are typically O(1). \n🔹 Stacks can be implemented using arrays or linked lists. \n🚀 Common applications include expression evaluation, recursion (call stack), undo/redo operations, and syntax parsing."
 }

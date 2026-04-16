@@ -30,6 +30,54 @@
     "Reverse a string",
     "Check palindrome",
     "Count vowels"
+  ],
+  "stack": [
+    "Implement stack using array",
+    "Implement stack using linked list",
+    "Check for balanced parentheses",
+    "Next greater element",
+    "Reverse a stack",
+    "Sort a stack using recursion",
+    "Design a stack that supports getMin() in O(1)",
+    "Evaluate postfix expression",
+    "Convert infix to postfix expression",
+    "Check for valid parentheses sequence"
+  ],
+  "arrays_quiz": [
+    {
+      "question": "What is time complexity of accessing array element?",
+      "options": ["O(n)", "O(log n)", "O(1)", "O(n log n)"],
+      "answer": "O(1)"
+    },
+    {
+      "question": "Array index starts from?",
+      "options": ["1", "0", "-1", "Depends"],
+      "answer": "0"
+    }
+  ],
+  "strings_quiz": [
+    {
+      "question": "Which data type is used for strings in Python?",
+      "options": ["int", "str", "char", "float"],
+      "answer": "str"
+    },
+    {
+      "question": "Palindrome means?",
+      "options": ["Same forward and backward", "Only forward", "Only backward", "None"],
+      "answer": "Same forward and backward"
+    }
+  ],
+  "stack_quiz": [
+    {
+      "question": "Stack follows which principle?",
+      "options": ["FIFO", "LIFO", "Random", "Priority"],
+      "answer": "LIFO"
+    },
+    {
+      "question": "Which operation removes element from stack?",
+      "options": ["push", "pop", "peek", "insert"],
+      "answer": "pop"
+    }
   ]
 }
 
