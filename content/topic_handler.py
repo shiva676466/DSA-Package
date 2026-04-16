@@ -31,6 +31,7 @@ def handle_topic(topic_name):
         if choice == '1':
             print()
             type_text(get_theory(topic_name), 0.005)
+            input("\nPress Enter to return to menu...")
 
         elif choice == '2':
             box_menu("SELECT LANGUAGE 💻", [
@@ -47,12 +48,14 @@ def handle_topic(topic_name):
                 print(get_code(topic_name, "cpp"))
             elif lang == '3':
                 print(get_code(topic_name, "java"))
+            input("\nPress Enter to return to menu...")
 
         elif choice == '3':
             questions = get_questions(topic_name)
             print("\n📌 Questions:")
             for q in questions:
                 print("-", q)
+            input("\nPress Enter to return to menu...")
 
         elif choice == '4':
             quiz_questions = get_quiz(topic_name)
@@ -69,9 +72,11 @@ def handle_topic(topic_name):
                 linked_list_animation()
             else:
                 print("Animation coming soon.")
+                input("\nPress Enter to return to menu...")
 
         elif choice == '6':
             break
 
         else:
             print("Invalid choice!")
+            input("\nPress Enter to continue...")
