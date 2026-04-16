@@ -19,5 +19,10 @@
     "python": "from collections import deque\nq = deque()\nq.append(10)\nq.append(20)\nprint(q.popleft())",
     "cpp": "#include<iostream>\n#include<queue>\nusing namespace std;\nint main(){ queue<int> q; q.push(10); q.push(20); cout<<q.front(); return 0; }",
     "java": "import java.util.LinkedList;\nimport java.util.Queue;\nclass Main{ public static void main(String[] args){ Queue<Integer> q = new LinkedList<>(); q.add(10); q.add(20); System.out.println(q.poll()); }}"
+  },
+  "linked_list": {
+    "python": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\nhead = Node(10)\nhead.next = Node(20)\nhead.next.next = Node(30)\ncur = head\nwhile cur:\n    print(cur.data, end=' -> ' if cur.next else '')\n    cur = cur.next",
+    "cpp": "#include<iostream>\nusing namespace std;\nstruct Node{int data; Node* next; Node(int v){data=v; next=NULL;}};\nint main(){Node* head=new Node(10); head->next=new Node(20); head->next->next=new Node(30); for(Node* t=head;t;t=t->next) cout<<t->data<<(t->next?\" -> \":\"\"); return 0;}",
+    "java": "class Node{int data; Node next; Node(int d){data=d;}}\nclass Main{public static void main(String[] args){Node head=new Node(10); head.next=new Node(20); head.next.next=new Node(30); for(Node t=head;t!=null;t=t.next) System.out.print(t.data+(t.next!=null?\" -> \":\"\"));}}"
   }
 }

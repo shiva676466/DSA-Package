@@ -7,6 +7,9 @@ YELLOW = "\033[93m"
 BLUE = "\033[94m"
 MAGENTA = "\033[95m"
 CYAN = "\033[96m"
+WHITE = "\033[97m"
+BOLD = "\033[1m"
+BLINK = "\033[5m"
 RESET = "\033[0m"
 
 
@@ -31,47 +34,78 @@ def pause(sec=1.5):
     time.sleep(sec)
 
 
-def show_array(arr, title="Array"):
-    print("=" * 50)
-    print(title.center(50))
-    print("=" * 50)
-    boxes = " ".join(f"[{x}]" for x in arr)
-    indexes = " ".join(f" {i} " for i in range(len(arr)))
-    print(boxes)
+def neon_line(width=60):
+    print(CYAN + "═" * width + RESET)
+
+
+def show_array(arr, title="Array", highlight=None):
+    neon_line(60)
+    print(MAGENTA + BOLD + title.center(60) + RESET)
+    neon_line(60)
+
+    boxes = []
+    for i, x in enumerate(arr):
+        color = GREEN if highlight is not None and i == highlight else YELLOW
+        boxes.append(color + BOLD + f"⟪{str(x).center(5)}⟫" + RESET)
+    print(" ".join(boxes))
+
+    indexes = " ".join(CYAN + f" {i:^5} " + RESET for i in range(len(arr)))
     print(indexes)
-    print("=" * 50)
+    print(f"\n{CYAN}{BOLD}⚡ Size: {len(arr)}{RESET}")
+    neon_line(60)
 
 
 def insertion_animation():
     arr = [10, 20, 30]
-    clear()
-    print("Array Insertion Animation")
-    pause()
-    show_array(arr, "Initial Array:")
-    pause()
-    print("\nInserting 40 at end...")
-    pause()
-    arr.append(40)
+    try:
+        value = int(input("\nEnter value to insert: "))
+    except ValueError:
+        print(RED + "Invalid input!" + RESET)
+        pause(1.5)
+        return
+
+    for step in range(3):
+        clear()
+        show_array(arr, "ARRAY INSERTION")
+        print(f"\n{BLUE}Moving {value} into array{'.' * (step + 1)}{RESET}")
+        print(CYAN + "\n                 ⚡⚡ [ ] ⚡⚡ -->" + RESET)
+        pause(0.35)
+    arr.append(value)
     beep(1, freq_type="success")
     clear()
-    show_array(arr, "Updated Array:")
+    show_array(arr, "AFTER INSERTION", len(arr) - 1)
+    print(f"\n{GREEN}{BOLD}>>> Inserted Successfully!{RESET}")
     pause(2)
 
 
 def deletion_animation():
     arr = [10, 20, 30, 40]
     clear()
-    print("Array Deletion Animation")
-    pause()
-    show_array(arr, "Initial Array:")
-    pause()
-    print("\nDeleting element 20...")
-    pause()
-    idx = arr.index(20)
+    show_array(arr, "ARRAY DELETION")
+    try:
+        idx = int(input("\nEnter index to delete: "))
+    except ValueError:
+        print(RED + "Invalid input!" + RESET)
+        pause(1.5)
+        return
+
+    if idx < 0 or idx >= len(arr):
+        print(RED + "Index out of range!" + RESET)
+        pause(1.5)
+        return
+
+    removed = arr[idx]
+    for step in range(3):
+        clear()
+        show_array(arr, "ARRAY DELETION", idx)
+        print(f"\n{YELLOW}Removing {removed}{'.' * (step + 1)}{RESET}")
+        print(MAGENTA + "\n<-- ⚡⚡ [ ] ⚡⚡" + RESET)
+        pause(0.35)
     arr.pop(idx)
     beep(1, freq_type="alert")
     clear()
-    show_array(arr, "Updated Array:")
+    show_array(arr, "AFTER DELETION")
+    print(f"\n{GREEN}{BOLD}<<< Removed: {removed}{RESET}")
     pause(2)
 
 
@@ -91,21 +125,27 @@ def traversal_animation():
 
 def searching_animation():
     arr = [3, 7, 9, 12, 15]
-    target = 12
     clear()
-    print("Linear Search Animation")
-    pause()
+    show_array(arr, "SEARCH ARRAY")
+    try:
+        target = int(input("\nEnter value to search: "))
+    except ValueError:
+        print(RED + "Invalid input!" + RESET)
+        pause(1.5)
+        return
+
     for i, val in enumerate(arr):
         clear()
-        show_array(arr, "Searching Array")
+        show_array(arr, "SEARCHING ARRAY", i)
         print(f"\nChecking index {i}: {val}")
-        pause(1.5)
+        pause(1.2)
         if val == target:
             beep(3, 0.10, "success")
-            print(f"Found {target} at index {i}")
+            print(f"\n{GREEN}{BOLD}Found {target} at index {i}{RESET}")
             pause(2)
             return
-    print("Element not found")
+
+    print(f"\n{RED}Element not found{RESET}")
     pause(2)
 
 
@@ -158,16 +198,17 @@ def sorting_animation():
 def array_reverse_animation():
     while True:
         clear()
-        print("ARRAY ANIMATIONS")
+        print(CYAN + "═" * 40 + RESET)
+        print(MAGENTA + BOLD + BLINK + "ARRAY ANIMATIONS".center(40) + RESET)
+        print(CYAN + "═" * 40 + RESET)
         beep(1, 0.05, "normal")
-        print("=" * 30)
-        print("1. Insertion")
-        print("2. Deletion")
-        print("3. Traversal")
-        print("4. Searching")
-        print("5. Reverse")
-        print("6. Sorting")
-        print("7. Back")
+        print(GREEN + BOLD + "⚡ 1. Insertion" + RESET)
+        print(YELLOW + BOLD + "⚡ 2. Deletion" + RESET)
+        print(CYAN + BOLD + "⚡ 3. Traversal" + RESET)
+        print(BLUE + BOLD + "⚡ 4. Searching" + RESET)
+        print(MAGENTA + BOLD + "⚡ 5. Reverse" + RESET)
+        print(WHITE + BOLD + "⚡ 6. Sorting" + RESET)
+        print(RED + BOLD + "⚡ 7. Back" + RESET)
 
         choice = input("Enter choice: ")
 

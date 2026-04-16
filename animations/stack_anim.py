@@ -7,7 +7,9 @@ YELLOW = "\033[93m"
 BLUE = "\033[94m"
 CYAN = "\033[96m"
 MAGENTA = "\033[95m"
+WHITE = "\033[97m"
 BOLD = "\033[1m"
+BLINK = "\033[5m"
 RESET = "\033[0m"
 
 
@@ -19,15 +21,19 @@ def pause(sec=1.5):
     time.sleep(sec)
 
 
+def neon_line(width=54):
+    print(CYAN + "═" * width + RESET)
+
+
 def show_stack(stack, title="STACK", highlight=None):
     clear()
-    print(CYAN + "=" * 54 + RESET)
-    print((BOLD + title.center(54) + RESET))
-    print(CYAN + "=" * 54 + RESET)
+    neon_line(54)
+    print(MAGENTA + BOLD + title.center(54) + RESET)
+    neon_line(54)
 
     if not stack:
         print(f"\n{RED}{BOLD}        [ EMPTY STACK ]{RESET}\n")
-        print(CYAN + "=" * 54 + RESET)
+        neon_line(54)
         return
 
     print()
@@ -36,12 +42,12 @@ def show_stack(stack, title="STACK", highlight=None):
         top_text = "  ==> TOP" if i == len(stack) - 1 else ""
         color = GREEN if i == highlight else YELLOW
 
-        print(color + "   --> ┌───────────┐" + RESET)
-        print(color + f"       │ {str(value).center(9)} │" + RESET + top_text)
-        print(color + "   --> └───────────┘" + RESET)
+        print(color + BOLD + "   ⚡ ┌───────────┐" + RESET)
+        print(color + BOLD + f"   ⚡ │ {str(value).center(9)} │" + RESET + top_text)
+        print(color + BOLD + "   ⚡ └───────────┘" + RESET)
 
-    print(f"\n{MAGENTA}Size: {len(stack)}{RESET}")
-    print(CYAN + "=" * 54 + RESET)
+    print(f"\n{CYAN}{BOLD}⚡ Size: {len(stack)}{RESET}")
+    neon_line(54)
 
 
 def push_animation(stack):
@@ -57,7 +63,7 @@ def push_animation(stack):
         show_stack(stack, "PUSH OPERATION")
         dots = "." * (step + 1)
         print(f"\n{BLUE}Moving {value} into stack{dots}{RESET}")
-        print("\n          [ ]")
+        print(CYAN + "\n          ⚡⚡ [ ] ⚡⚡" + RESET)
         pause(0.35)
 
     stack.append(value)
@@ -79,7 +85,7 @@ def pop_animation(stack):
         show_stack(stack, "POP OPERATION", len(stack) - 1)
         dots = "." * (step + 1)
         print(f"\n{YELLOW}Lifting top element {removed}{dots}{RESET}")
-        print("\n          [ ^ ]")
+        print(MAGENTA + "\n          ⚡⚡ [ ^ ] ⚡⚡" + RESET)
         pause(0.35)
 
     removed = stack.pop()
@@ -146,17 +152,17 @@ def stack_animation():
 
     while True:
         clear()
-        print(CYAN + "=" * 40 + RESET)
-        print((BOLD + "STACK ANIMATIONS".center(40) + RESET))
-        print(CYAN + "=" * 40 + RESET)
+        print(CYAN + "═" * 40 + RESET)
+        print(MAGENTA + BOLD + BLINK + "STACK ANIMATIONS".center(40) + RESET)
+        print(CYAN + "═" * 40 + RESET)
 
-        print("1. Push")
-        print("2. Pop")
-        print("3. Peek")
-        print("4. isEmpty")
-        print("5. Display")
-        print("6. Search")
-        print("7. Back")
+        print(GREEN + BOLD + "⚡ 1. Push" + RESET)
+        print(YELLOW + BOLD + "⚡ 2. Pop" + RESET)
+        print(CYAN + BOLD + "⚡ 3. Peek" + RESET)
+        print(BLUE + BOLD + "⚡ 4. isEmpty" + RESET)
+        print(MAGENTA + BOLD + "⚡ 5. Display" + RESET)
+        print(WHITE + BOLD + "⚡ 6. Search" + RESET)
+        print(RED + BOLD + "⚡ 7. Back" + RESET)
 
         choice = input("\nEnter choice: ")
 

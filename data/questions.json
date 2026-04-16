@@ -102,6 +102,29 @@
       "options": ["push", "enqueue", "pop", "peek"],
       "answer": "enqueue"
     }
+  ],
+  "linked_list": [
+    "Traverse a linked list",
+    "Insert node at beginning",
+    "Insert node at end",
+    "Insert node at given position",
+    "Delete node from beginning",
+    "Delete node from end",
+    "Delete node by value",
+    "Search element in linked list",
+    "Reverse a linked list",
+    "Find middle node of linked list"
+  ],
+  "linked_list_quiz": [
+    {
+      "question": "Linked List stores elements in?",
+      "options": ["Contiguous memory", "Nodes with pointers", "Stack form", "Queue form"],
+      "answer": "Nodes with pointers"
+    },
+    {
+      "question": "Which pointer stores next node address in singly linked list?",
+      "options": ["prev", "random", "next", "head"],
+      "answer": "next"
+    }
   ]
 }
-

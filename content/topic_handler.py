@@ -4,6 +4,7 @@ from utils.quiz_engine import run_quiz
 from animations.arrays_anim import array_reverse_animation
 from animations.stack_anim import stack_animation
 from animations.queue_anim import queue_animation
+from animations.linked_list_anim import linked_list_animation
 
 def handle_topic(topic_name):
     while True:
@@ -52,6 +53,8 @@ def handle_topic(topic_name):
                 stack_animation()
             elif topic_name == "queue":
                 queue_animation()
+            elif topic_name == "linked_list":
+                linked_list_animation()
             else:
                 print("Animation coming soon.")
 

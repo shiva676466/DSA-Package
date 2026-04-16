@@ -2,6 +2,7 @@ from content.arrays import arrays_content
 from content.strings import strings_content
 from content.stacks import stacks_content
 from content.queue import queue_content
+from content.linked_list import linked_list_content
 
 
 def beginner_topics():
@@ -25,10 +26,9 @@ def beginner_topics():
         elif choice == '4':
             queue_content()
         elif choice == '5':
-            print("Coming Soon.")
+            linked_list_content()
         elif choice == '6':
             print("Returning to previous menu....!")
             break
         else:
             print("Invalid Choice")
-            
