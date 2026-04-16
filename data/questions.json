@@ -78,6 +78,30 @@
       "options": ["push", "pop", "peek", "insert"],
       "answer": "pop"
     }
+  ],
+  "queue": [
+    "Implement queue using array",
+    "Implement queue using linked list",
+    "Enqueue operation in queue",
+    "Dequeue operation in queue",
+    "Find front element of queue",
+    "Find rear element of queue",
+    "Check if queue is empty",
+    "Generate binary numbers using queue",
+    "Reverse first k elements of queue",
+    "Implement circular queue"
+  ],
+  "queue_quiz": [
+    {
+      "question": "Queue follows which principle?",
+      "options": ["FIFO", "LIFO", "Priority", "Random"],
+      "answer": "FIFO"
+    },
+    {
+      "question": "Which operation inserts element into queue?",
+      "options": ["push", "enqueue", "pop", "peek"],
+      "answer": "enqueue"
+    }
   ]
 }
 

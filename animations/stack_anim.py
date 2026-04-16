@@ -5,6 +5,9 @@ RED = "\033[91m"
 GREEN = "\033[92m"
 YELLOW = "\033[93m"
 BLUE = "\033[94m"
+CYAN = "\033[96m"
+MAGENTA = "\033[95m"
+BOLD = "\033[1m"
 RESET = "\033[0m"
 
 
@@ -18,41 +21,49 @@ def pause(sec=1.5):
 
 def show_stack(stack, title="STACK", highlight=None):
     clear()
-    print("=" * 50)
-    print(title.center(50))
-    print("=" * 50)
+    print(CYAN + "=" * 54 + RESET)
+    print((BOLD + title.center(54) + RESET))
+    print(CYAN + "=" * 54 + RESET)
 
     if not stack:
-        print(f"{RED}   [ EMPTY ]{RESET}")
-        print("=" * 50)
+        print(f"\n{RED}{BOLD}        [ EMPTY STACK ]{RESET}\n")
+        print(CYAN + "=" * 54 + RESET)
         return
 
+    print()
     for i in range(len(stack) - 1, -1, -1):
         value = stack[i]
+        top_text = "  ==> TOP" if i == len(stack) - 1 else ""
+        color = GREEN if i == highlight else YELLOW
 
-        if i == highlight:
-            print(f"{GREEN}   ┌───────┐{RESET}")
-            print(f"{GREEN}   │ {str(value).center(5)} │   ← TOP{RESET}")
-            print(f"{GREEN}   └───────┘{RESET}")
-        else:
-            top_text = " ← TOP" if i == len(stack) - 1 else ""
-            print("   ┌───────┐")
-            print(f"   │ {str(value).center(5)} │{top_text}")
-            print("   └───────┘")
+        print(color + "   --> ┌───────────┐" + RESET)
+        print(color + f"       │ {str(value).center(9)} │" + RESET + top_text)
+        print(color + "   --> └───────────┘" + RESET)
 
-    print("=" * 50)
+    print(f"\n{MAGENTA}Size: {len(stack)}{RESET}")
+    print(CYAN + "=" * 54 + RESET)
 
 
 def push_animation(stack):
-    value = len(stack) * 10 + 10
+    try:
+        raw = input("\nEnter value to push: ")
+        value = int(raw)
+    except ValueError:
+        print(f"{RED}Invalid number!{RESET}")
+        pause(1.5)
+        return
 
-    show_stack(stack, "PUSH OPERATION")
-    print(f"\nPushing {value}...")
-    pause()
+    for step in range(3):
+        show_stack(stack, "PUSH OPERATION")
+        dots = "." * (step + 1)
+        print(f"\n{BLUE}Moving {value} into stack{dots}{RESET}")
+        print("\n          [ ]")
+        pause(0.35)
 
     stack.append(value)
 
     show_stack(stack, "AFTER PUSH", len(stack) - 1)
+    print(f"\n{GREEN}>>> Push Successful!{RESET}")
     pause(2)
 
 
@@ -63,13 +74,18 @@ def pop_animation(stack):
         pause(2)
         return
 
-    show_stack(stack, "POP OPERATION", len(stack) - 1)
-    print(f"\nRemoving top element {stack[-1]}...")
-    pause(2)
+    removed = stack[-1]
+    for step in range(3):
+        show_stack(stack, "POP OPERATION", len(stack) - 1)
+        dots = "." * (step + 1)
+        print(f"\n{YELLOW}Lifting top element {removed}{dots}{RESET}")
+        print("\n          [ ^ ]")
+        pause(0.35)
 
-    stack.pop()
+    removed = stack.pop()
 
     show_stack(stack, "AFTER POP")
+    print(f"\n{GREEN}<<< Removed: {removed}{RESET}")
     pause(2)
 
 
@@ -81,7 +97,7 @@ def peek_animation(stack):
         return
 
     show_stack(stack, "PEEK OPERATION", len(stack) - 1)
-    print(f"\nTop Element = {GREEN}{stack[-1]}{RESET}")
+    print(f"\n{GREEN}{BOLD}==> Top Element = {stack[-1]}{RESET}")
     pause(2)
 
 
@@ -101,21 +117,46 @@ def display_animation(stack):
     pause(2)
 
 
+def search_animation(stack):
+    if not stack:
+        show_stack(stack, "SEARCH STACK")
+        print(f"\n{RED}Stack is Empty!{RESET}")
+        pause(2)
+        return
+
+    try:
+        target = int(input("\nEnter value to search: "))
+    except ValueError:
+        print(f"{RED}Invalid number!{RESET}")
+        pause(1.5)
+        return
+
+    if target in stack:
+        idx = stack.index(target)
+        show_stack(stack, "SEARCH RESULT", idx)
+        print(f"\n{GREEN}Found {target} in stack.{RESET}")
+    else:
+        show_stack(stack, "SEARCH RESULT")
+        print(f"\n{RED}{target} not found.{RESET}")
+    pause(2)
+
+
 def stack_animation():
     stack = []
 
     while True:
         clear()
-        print("=" * 40)
-        print("STACK ANIMATIONS".center(40))
-        print("=" * 40)
+        print(CYAN + "=" * 40 + RESET)
+        print((BOLD + "STACK ANIMATIONS".center(40) + RESET))
+        print(CYAN + "=" * 40 + RESET)
 
         print("1. Push")
         print("2. Pop")
         print("3. Peek")
         print("4. isEmpty")
         print("5. Display")
-        print("6. Back")
+        print("6. Search")
+        print("7. Back")
 
         choice = input("\nEnter choice: ")
 
@@ -135,6 +176,9 @@ def stack_animation():
             display_animation(stack)
 
         elif choice == '6':
+            search_animation(stack)
+
+        elif choice == '7':
             break
 
         else:
