@@ -1,3 +1,4 @@
+import time
 from services.content_service import get_theory, get_questions, get_code
 from services.quiz_service import get_quiz
 from utils.quiz_engine import run_quiz
@@ -5,29 +6,40 @@ from animations.arrays_anim import array_reverse_animation
 from animations.stack_anim import stack_animation
 from animations.queue_anim import queue_animation
 from animations.linked_list_anim import linked_list_animation
+from utils.ui import box_menu
+
+def type_text(text, delay=0.01):
+    for ch in text:
+        print(ch, end="", flush=True)
+        time.sleep(delay)
+    print()
 
 def handle_topic(topic_name):
     while True:
-        print(f"\n--- {topic_name.capitalize()} ---")
-        print("1. Theory")
-        print("2. Code")
-        print("3. Questions")
-        print("4. Quiz")
-        print("5. Animation")
-        print("6. Back")
+        title = f"{topic_name.replace('_', ' ').title()} ⚡"
+        box_menu(title, [
+            ("1", "Theory"),
+            ("2", "Code"),
+            ("3", "Questions"),
+            ("4", "Quiz"),
+            ("5", "Animation"),
+            ("6", "Back")
+        ])
 
-        choice = input("Enter choice: ")
+        choice = input("Enter your choice: ")
 
         if choice == '1':
-            print("\n" + get_theory(topic_name))
+            print()
+            type_text(get_theory(topic_name), 0.005)
 
         elif choice == '2':
-            print("\nSelect Language:")
-            print("1. Python")
-            print("2. C++")
-            print("3. Java")
+            box_menu("SELECT LANGUAGE 💻", [
+                ("1", "Python"),
+                ("2", "C++"),
+                ("3", "Java")
+            ])
 
-            lang = input("Choose: ")
+            lang = input("Choose language: ")
 
             if lang == '1':
                 print(get_code(topic_name, "python"))
@@ -38,7 +50,7 @@ def handle_topic(topic_name):
 
         elif choice == '3':
             questions = get_questions(topic_name)
-            print("\nQuestions:")
+            print("\n📌 Questions:")
             for q in questions:
                 print("-", q)
 

@@ -2,18 +2,20 @@ from content.graphs import graphs_content
 from content.heap import heap_content
 from content.dynamic_programming import dynamic_programming_content
 from content.trie import trie_content
+from utils.ui import box_menu
 
 
 def advanced_topics():
     while True:
-        print("\nAdvanced Topics:")
-        print("1. Graphs")
-        print("2. Heap")
-        print("3. Dynamic Programming")
-        print("4. Trie")
-        print("5. Back")
+        box_menu("ADVANCED TOPICS 📕", [
+            ("1", "Graphs"),
+            ("2", "Heap"),
+            ("3", "Dynamic Programming"),
+            ("4", "Trie"),
+            ("5", "Back")
+        ])
 
-        choice = input("Enter choice: ")
+        choice = input("Enter your choice: ")
 
         if choice == '1':
             graphs_content()

@@ -3,17 +3,19 @@ from content.strings import strings_content
 from content.stacks import stacks_content
 from content.queue import queue_content
 from content.linked_list import linked_list_content
+from utils.ui import box_menu
 
 
 def beginner_topics():
     while True:
-        print("\nBeginner Topics: ")
-        print("1. Arrays")
-        print("2. Strings")
-        print("3. Stack")
-        print("4. Queue")
-        print("5. Linked List")
-        print("6. Back")
+        box_menu("BEGINNER TOPICS 📘", [
+            ("1", "Arrays"),
+            ("2", "Strings"),
+            ("3", "Stack"),
+            ("4", "Queue"),
+            ("5", "Linked List"),
+            ("6", "Back")
+        ])
         
         choice = input("Enter your choice: ")
         
@@ -28,7 +30,7 @@ def beginner_topics():
         elif choice == '5':
             linked_list_content()
         elif choice == '6':
-            print("Returning to previous menu....!")
+            print("Returning to previous menu...")
             break
         else:
-            print("Invalid Choice")
+            print("Invalid choice!")
