@@ -120,6 +120,28 @@ def search_value(arr):
     pause(2)
 
 
+def reverse_list(arr):
+    if not arr:
+        show_list(arr,'REVERSE LIST')
+        pause(1.5)
+        return
+
+    original = arr[:]
+    reversed_nodes = []
+
+    for i in range(len(original) - 1, -1, -1):
+        reversed_nodes.append(original[i])
+        show_list(reversed_nodes, 'REVERSING LIST', len(reversed_nodes) - 1)
+        print(BLUE + f'\nTaking node {original[i]} and moving to front...' + RESET)
+        print(CYAN + '\n⚡⚡ NULL <= NODE <= HEAD ⚡⚡' + RESET)
+        pause(0.8)
+
+    arr[:] = reversed_nodes
+    show_list(arr,'AFTER REVERSE',0)
+    print(GREEN + BOLD + '\n>>> Linked List Reversed Successfully!' + RESET)
+    pause(2)
+
+
 def display(arr):
     show_list(arr,'DISPLAY LIST')
     pause(2)
@@ -137,14 +159,16 @@ def linked_list_animation():
         print(CYAN + BOLD + '⚡ 3. Delete Value' + RESET)
         print(BLUE + BOLD + '⚡ 4. Search' + RESET)
         print(MAGENTA + BOLD + '⚡ 5. Display' + RESET)
-        print(RED + BOLD + '⚡ 6. Back' + RESET)
+        print(WHITE + BOLD + '⚡ 6. Reverse' + RESET)
+        print(RED + BOLD + '⚡ 7. Back' + RESET)
         ch=input('\nEnter choice: ')
         if ch=='1': insert_begin(arr)
         elif ch=='2': insert_end(arr)
         elif ch=='3': delete_value(arr)
         elif ch=='4': search_value(arr)
         elif ch=='5': display(arr)
-        elif ch=='6': break
+        elif ch=='6': reverse_list(arr)
+        elif ch=='7': break
         else: pause(0.8)
 
 if __name__=='__main__':
