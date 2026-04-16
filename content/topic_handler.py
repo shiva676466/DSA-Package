@@ -1,6 +1,8 @@
 from services.content_service import get_theory, get_questions, get_code
 from services.quiz_service import get_quiz
 from utils.quiz_engine import run_quiz
+from animations.arrays_anim import array_reverse_animation
+from animations.stack_anim import stack_animation
 
 def handle_topic(topic_name):
     while True:
@@ -9,7 +11,8 @@ def handle_topic(topic_name):
         print("2. Code")
         print("3. Questions")
         print("4. Quiz")
-        print("5. Back")
+        print("5. Animation")
+        print("6. Back")
 
         choice = input("Enter choice: ")
 
@@ -42,6 +45,14 @@ def handle_topic(topic_name):
             run_quiz(quiz_questions)
 
         elif choice == '5':
+            if topic_name == "arrays":
+                array_reverse_animation()
+            elif topic_name == "stack":
+                stack_animation()
+            else:
+                print("Animation coming soon.")
+
+        elif choice == '6':
             break
 
         else:
