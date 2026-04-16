@@ -1,6 +1,3 @@
-
-
-
 from utils.file_handler import load_json
 
 def get_quiz(topic):
