@@ -1,37 +1,4 @@
-from services.content_service import get_theory, get_questions, get_code
+from content.topic_handler import handle_topic
 
 def arrays_content():
-    while True:
-        print("\n--- Arrays ---")
-        print("1. Theory")
-        print("2. Code")
-        print("3. Questions")
-        print("4. Back")
-
-        choice = input("Enter choice: ")
-
-        if choice == '1':
-            print("\n" + get_theory("arrays"))
-
-        elif choice == '2':
-            print("\nSelect Language:")
-            print("1. Python")
-            print("2. C++")
-            print("3. Java")
-
-            lang = input("Choose: ")
-
-            if lang == '1':
-                print(get_code("arrays", "python"))
-            elif lang == '2':
-                print(get_code("arrays", "cpp"))
-            elif lang == '3':
-                print(get_code("arrays", "java"))
-
-        elif choice == '3':
-            questions = get_questions("arrays")
-            for q in questions:
-                print("-", q)
-
-        elif choice == '4':
-            break
+    handle_topic("arrays")
