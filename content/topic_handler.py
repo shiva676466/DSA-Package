@@ -1,4 +1,6 @@
 from services.content_service import get_theory, get_questions, get_code
+from services.quiz_service import get_quiz
+from utils.quiz_engine import run_quiz
 
 def handle_topic(topic_name):
     while True:
@@ -6,7 +8,8 @@ def handle_topic(topic_name):
         print("1. Theory")
         print("2. Code")
         print("3. Questions")
-        print("4. Back")
+        print("4. Quiz")
+        print("5. Back")
 
         choice = input("Enter choice: ")
 
@@ -35,6 +38,10 @@ def handle_topic(topic_name):
                 print("-", q)
 
         elif choice == '4':
+            quiz_questions = get_quiz(topic_name)
+            run_quiz(quiz_questions)
+
+        elif choice == '5':
             break
 
         else:
