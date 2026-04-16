@@ -126,5 +126,117 @@
       "options": ["prev", "random", "next", "head"],
       "answer": "next"
     }
+  ],
+  "trees": [
+    "Implement inorder traversal",
+    "Implement preorder traversal",
+    "Implement postorder traversal",
+    "Find height of binary tree",
+    "Count leaf nodes in tree"
+  ],
+  "sorting": [
+    "Implement bubble sort",
+    "Implement selection sort",
+    "Implement insertion sort",
+    "Implement merge sort",
+    "Implement quick sort"
+  ],
+  "searching": [
+    "Implement linear search",
+    "Implement binary search",
+    "Find first occurrence of element",
+    "Find last occurrence of element",
+    "Count occurrences using binary search"
+  ],
+  "recursion": [
+    "Find factorial using recursion",
+    "Generate Fibonacci using recursion",
+    "Reverse string using recursion",
+    "Solve Tower of Hanoi",
+    "Find sum of digits recursively"
+  ],
+  "trees_quiz": [
+    {
+      "question": "Top node of tree is called?",
+      "options": ["Leaf", "Root", "Parent", "Child"],
+      "answer": "Root"
+    }
+  ],
+  "sorting_quiz": [
+    {
+      "question": "Which sorting algorithm repeatedly swaps adjacent elements?",
+      "options": ["Merge Sort", "Quick Sort", "Bubble Sort", "Heap Sort"],
+      "answer": "Bubble Sort"
+    }
+  ],
+  "searching_quiz": [
+    {
+      "question": "Binary search works on?",
+      "options": ["Any array", "Sorted array", "Linked list only", "Queue only"],
+      "answer": "Sorted array"
+    }
+  ],
+  "recursion_quiz": [
+    {
+      "question": "Every recursive function must have?",
+      "options": ["Loop", "Base case", "Pointer", "Array"],
+      "answer": "Base case"
+    }
+  ],
+  "graphs": [
+    "Implement BFS traversal",
+    "Implement DFS traversal",
+    "Detect cycle in graph",
+    "Find shortest path using Dijkstra",
+    "Count connected components"
+  ],
+  "heap": [
+    "Insert into max heap",
+    "Delete root from heap",
+    "Build heap from array",
+    "Implement heapsort",
+    "Find kth largest element"
+  ],
+  "dynamic_programming": [
+    "Find Fibonacci using DP",
+    "Solve 0/1 Knapsack",
+    "Longest Common Subsequence",
+    "Coin Change problem",
+    "Climbing stairs problem"
+  ],
+  "trie": [
+    "Insert word into trie",
+    "Search word in trie",
+    "Prefix matching in trie",
+    "Delete word from trie",
+    "Autocomplete using trie"
+  ],
+  "graphs_quiz": [
+    {
+      "question": "Graph traversal using queue is?",
+      "options": ["DFS", "BFS", "Heap", "Trie"],
+      "answer": "BFS"
+    }
+  ],
+  "heap_quiz": [
+    {
+      "question": "In Max Heap, root contains?",
+      "options": ["Smallest", "Largest", "Middle", "Random"],
+      "answer": "Largest"
+    }
+  ],
+  "dynamic_programming_quiz": [
+    {
+      "question": "DP mainly avoids solving?",
+      "options": ["Unique problems", "Overlapping subproblems repeatedly", "Arrays", "Graphs"],
+      "answer": "Overlapping subproblems repeatedly"
+    }
+  ],
+  "trie_quiz": [
+    {
+      "question": "Trie is mainly used for?",
+      "options": ["Sorting numbers", "Prefix search", "Stack operations", "Binary tree balancing"],
+      "answer": "Prefix search"
+    }
   ]
 }

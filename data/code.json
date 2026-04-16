@@ -21,8 +21,46 @@
     "java": "import java.util.LinkedList;\nimport java.util.Queue;\nclass Main{ public static void main(String[] args){ Queue<Integer> q = new LinkedList<>(); q.add(10); q.add(20); System.out.println(q.poll()); }}"
   },
   "linked_list": {
-    "python": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\nhead = Node(10)\nhead.next = Node(20)\nhead.next.next = Node(30)\ncur = head\nwhile cur:\n    print(cur.data, end=' -> ' if cur.next else '')\n    cur = cur.next",
-    "cpp": "#include<iostream>\nusing namespace std;\nstruct Node{int data; Node* next; Node(int v){data=v; next=NULL;}};\nint main(){Node* head=new Node(10); head->next=new Node(20); head->next->next=new Node(30); for(Node* t=head;t;t=t->next) cout<<t->data<<(t->next?\" -> \":\"\"); return 0;}",
-    "java": "class Node{int data; Node next; Node(int d){data=d;}}\nclass Main{public static void main(String[] args){Node head=new Node(10); head.next=new Node(20); head.next.next=new Node(30); for(Node t=head;t!=null;t=t.next) System.out.print(t.data+(t.next!=null?\" -> \":\"\"));}}"
+    "python": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\nhead = Node(10)\nhead.next = Node(20)\nhead.next.next = Node(30)\ncur = head\nwhile cur:\n    print(cur.data, end=' -> ' if cur.next else '')\n    cur = cur.next"
+  },
+  "trees": {
+    "python": "class Node:\n    def __init__(self, data):\n        self.data=data\n        self.left=None\n        self.right=None\nroot=Node(10)\nroot.left=Node(5)\nroot.right=Node(15)",
+    "cpp": "#include<iostream>\nusing namespace std; struct Node{int data; Node* left; Node* right; Node(int v){data=v;left=right=NULL;}}; int main(){Node* root=new Node(10); root->left=new Node(5); root->right=new Node(15);}",
+    "java": "class Node{int data; Node left,right; Node(int d){data=d;}} class Main{public static void main(String[] args){Node root=new Node(10); root.left=new Node(5); root.right=new Node(15);}}"
+  },
+  "sorting": {
+    "python": "arr=[5,2,4,1]\narr.sort()\nprint(arr)",
+    "cpp": "#include<iostream>\n#include<algorithm>\nusing namespace std; int main(){int arr[]={5,2,4,1}; sort(arr,arr+4);}",
+    "java": "import java.util.Arrays; class Main{public static void main(String[] args){int[] arr={5,2,4,1}; Arrays.sort(arr);}}"
+  },
+  "searching": {
+    "python": "arr=[2,4,6,8]\nprint(6 in arr)",
+    "cpp": "#include<iostream>\nusing namespace std; int main(){int arr[]={2,4,6,8}; for(int i=0;i<4;i++) if(arr[i]==6) cout<<\"Found\";}",
+    "java": "class Main{public static void main(String[] args){int[] arr={2,4,6,8}; for(int x:arr) if(x==6) System.out.println(\"Found\");}}"
+  },
+  "recursion": {
+    "python": "def fact(n):\n    return 1 if n==0 else n*fact(n-1)\nprint(fact(5))",
+    "cpp": "#include<iostream>\nusing namespace std; int fact(int n){return n==0?1:n*fact(n-1);} int main(){cout<<fact(5);}",
+    "java": "class Main{static int fact(int n){return n==0?1:n*fact(n-1);} public static void main(String[] args){System.out.println(fact(5));}}"
+  },
+  "graphs": {
+    "python": "graph={1:[2,3],2:[1],3:[1]}\nprint(graph)",
+    "cpp": "#include<iostream>\n#include<vector>\nusing namespace std; int main(){vector<int> g[4]; g[1]={2,3};}",
+    "java": "import java.util.*; class Main{public static void main(String[] args){Map<Integer,List<Integer>> g=new HashMap<>();}}"
+  },
+  "heap": {
+    "python": "import heapq\narr=[3,1,5]\nheapq.heapify(arr)\nprint(arr[0])",
+    "cpp": "#include<iostream>\n#include<queue>\nusing namespace std; int main(){priority_queue<int> pq; pq.push(10); pq.push(20); cout<<pq.top();}",
+    "java": "import java.util.PriorityQueue; class Main{public static void main(String[] args){PriorityQueue<Integer> pq=new PriorityQueue<>(); pq.add(10); pq.add(5); System.out.println(pq.peek());}}"
+  },
+  "dynamic_programming": {
+    "python": "dp=[0]*6\ndp[1]=1\nfor i in range(2,6): dp[i]=dp[i-1]+dp[i-2]\nprint(dp[5])",
+    "cpp": "#include<iostream>\nusing namespace std; int main(){int dp[6]={0,1}; for(int i=2;i<6;i++) dp[i]=dp[i-1]+dp[i-2]; cout<<dp[5];}",
+    "java": "class Main{public static void main(String[] args){int[] dp=new int[6]; dp[1]=1; for(int i=2;i<6;i++) dp[i]=dp[i-1]+dp[i-2]; System.out.println(dp[5]);}}"
+  },
+  "trie": {
+    "python": "trie={}\nword='cat'\nnode=trie\nfor ch in word: node=node.setdefault(ch,{})\nprint(trie)",
+    "cpp": "#include<iostream>\nusing namespace std; struct Node{Node* child[26]={}; bool end=false;}; int main(){Node* root=new Node();}",
+    "java": "class Node{Node[] child=new Node[26]; boolean end=false;} class Main{public static void main(String[] args){Node root=new Node();}}"
   }
 }

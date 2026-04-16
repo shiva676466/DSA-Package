@@ -1,4 +1,4 @@
 from content.topic_handler import handle_topic
 
-def trees_content():
-    handle_topic("trees")
+def heap_content():
+    handle_topic("heap")
