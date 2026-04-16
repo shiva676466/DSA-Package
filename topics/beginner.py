@@ -10,7 +10,7 @@ def beginner_topics():
         print("2. Strings")
         print("3. Stack")
         print("4. Queue")
-        print("5. LinkedList")
+        print("5. Linked List")
         print("6. Back")
         
         choice = input("Enter your choice: ")
@@ -26,7 +26,7 @@ def beginner_topics():
         elif choice == '5':
             print("Coming Soon.")
         elif choice == '6':
-            print("Exiting....!")
+            print("Returning to previous menu....!")
             break
         else:
             print("Invalid Choice")
