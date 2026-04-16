@@ -1,51 +1,36 @@
-import json
+from utils.file_handler import load_json
 
-# load data function
-def load_data(filename):
-    with open(f"data/{filename}", "r") as file:
-        return json.load(file)
-
-# arrays content function
 def arrays_content():
     while True:
-        print("\n========== Arrays ==========")
+        print("\n--- Arrays ---")
         print("1. Theory")
         print("2. Code")
         print("3. Questions")
         print("4. Back")
-        
-        choice = input("Enter your choice: ")
-        
+
+        choice = input("Enter choice: ")
+
         if choice == '1':
-            data = load_data("theory.json")       
-            print("\n" + data["arrays"])
-            
+            data = load_json("theory.json")
+            print(data["arrays"])
+
         elif choice == '2':
-            print("\nPython Example: ")
-            print("arr = [1,2,3,4]")
-            print("print(arr)")
-            
+            data = load_json("code.json")
+
+            print("1. Python\n2. C++\n3. Java")
+            lang = input("Choose: ")
+
+            if lang == '1':
+                print(data["arrays"]["python"])
+            elif lang == '2':
+                print(data["arrays"]["cpp"])
+            elif lang == '3':
+                print(data["arrays"]["java"])
+
         elif choice == '3':
-            show_questions()
-            
+            data = load_json("questions.json")
+            for q in data["arrays"]:
+                print("-", q)
+
         elif choice == '4':
-            print("Exiting....")
             break
-        else:
-            print("Invalid Choice")
-            
-            
-def show_questions():
-    try:
-        with open("data/questions.json", "r") as file:
-            data = json.load(file)
-            
-        questions = data.get("arrays", [])
-        
-        print("\n===== Arrays =====")
-        
-        for i, q in enumerate(questions, 1):
-            print(f"{i}. {q}")
-            
-    except Exception as e:
-        print("Error loading questions: ", e)
