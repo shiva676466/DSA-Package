@@ -4,6 +4,12 @@ import json
 import os
 import time
 
+GREEN = "\033[92m"
+YELLOW = "\033[93m"
+RED = "\033[91m"
+CYAN = "\033[96m"
+RESET = "\033[0m"
+
 
 def show_progress_chart():
     file_path = "data/progress.json"
@@ -34,10 +40,17 @@ def show_progress_chart():
                 # Support old progress.json format where values may be plain numbers
                 percent = int(info) if str(info).isdigit() else 0
 
+            if percent >= 80:
+                color = GREEN
+            elif percent >= 50:
+                color = YELLOW
+            else:
+                color = RED
+
             max_bars = percent // 10
             for step in range(max_bars + 1):
-                bars = "█" * step
-                row = f"{topic.upper():12} {bars:<10} {percent}%"
+                bars = color + ("█" * step) + RESET
+                row = f"{topic.upper():12} {bars:<20} {percent}%"
                 print("┃" + row.ljust(width) + "┃", end="\r")
                 time.sleep(0.06)
             print("┃" + row.ljust(width) + "┃")

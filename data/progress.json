@@ -8,5 +8,15 @@
         "score": 2,
         "total": 2,
         "percentage": 100.0
+    },
+    "linked_list": {
+        "score": 2,
+        "total": 2,
+        "percentage": 100.0
+    },
+    "strings": {
+        "score": 1,
+        "total": 2,
+        "percentage": 50.0
     }
 }
