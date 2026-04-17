@@ -1,2 +1,6 @@
 __pycache__/
 *.pyc
+.env
+dsa-package-firebase-adminsdk-fbsvc-95421e6431.json
+firebase-key.json
+firebase-key.json
