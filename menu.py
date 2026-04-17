@@ -2,6 +2,7 @@ from levels import select_level
 from utils.ui import box_menu
 import json
 import os
+import time
 
 
 def show_progress_chart():
@@ -33,8 +34,12 @@ def show_progress_chart():
                 # Support old progress.json format where values may be plain numbers
                 percent = int(info) if str(info).isdigit() else 0
 
-            bars = "█" * (percent // 10)
-            row = f"{topic.upper():12} {bars:<10} {percent}%"
+            max_bars = percent // 10
+            for step in range(max_bars + 1):
+                bars = "█" * step
+                row = f"{topic.upper():12} {bars:<10} {percent}%"
+                print("┃" + row.ljust(width) + "┃", end="\r")
+                time.sleep(0.06)
             print("┃" + row.ljust(width) + "┃")
 
     print("┗" + "━" * width + "┛")
