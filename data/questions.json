@@ -29,7 +29,24 @@
   "strings": [
     "Reverse a string",
     "Check palindrome",
-    "Count vowels"
+    "Count vowels",
+    "Count consonants in string",
+    "Find length of string without len()",
+    "Convert string to uppercase",
+    "Convert string to lowercase",
+    "Remove spaces from string",
+    "Find frequency of each character",
+    "Check anagram of two strings",
+    "Find first non-repeating character",
+    "Replace spaces with hyphen",
+    "Count words in sentence",
+    "Reverse words in sentence",
+    "Check substring exists",
+    "Find duplicate characters",
+    "Compress string characters",
+    "Compare two strings",
+    "Sort characters in string",
+    "Toggle case of string"
   ],
   "stack": [
     "Implement stack using array",
@@ -41,43 +58,38 @@
     "Design a stack that supports getMin() in O(1)",
     "Evaluate postfix expression",
     "Convert infix to postfix expression",
-    "Check for valid parentheses sequence"
+    "Check for valid parentheses sequence",
+    "Implement two stacks in one array",
+    "Find previous greater element",
+    "Delete middle element of stack",
+    "Insert at bottom of stack",
+    "Check stack overflow",
+    "Check stack underflow",
+    "Implement undo operation using stack",
+    "Stock span problem",
+    "Largest rectangle in histogram",
+    "Celebrity problem using stack"
   ],
   "arrays_quiz": [
-    {
-      "question": "What is time complexity of accessing array element?",
-      "options": ["O(n)", "O(log n)", "O(1)", "O(n log n)"],
-      "answer": "O(1)"
-    },
-    {
-      "question": "Array index starts from?",
-      "options": ["1", "0", "-1", "Depends"],
-      "answer": "0"
-    }
+    {"question":"What is time complexity of accessing array element?","options":["O(n)","O(log n)","O(1)","O(n log n)"],"answer":"O(1)"},
+    {"question":"Array index starts from?","options":["1","0","-1","Depends"],"answer":"0"},
+    {"question":"Arrays store elements in?","options":["Random memory","Contiguous memory","Pointers only","Stack memory"],"answer":"Contiguous memory"},
+    {"question":"Which search works best on sorted array?","options":["Linear Search","Binary Search","DFS","BFS"],"answer":"Binary Search"},
+    {"question":"Insertion at end of dynamic array is usually?","options":["O(1) amortized","O(n^2)","O(log n)","Impossible"],"answer":"O(1) amortized"}
   ],
   "strings_quiz": [
-    {
-      "question": "Which data type is used for strings in Python?",
-      "options": ["int", "str", "char", "float"],
-      "answer": "str"
-    },
-    {
-      "question": "Palindrome means?",
-      "options": ["Same forward and backward", "Only forward", "Only backward", "None"],
-      "answer": "Same forward and backward"
-    }
+    {"question":"Which data type is used for strings in Python?","options":["int","str","char","float"],"answer":"str"},
+    {"question":"Palindrome means?","options":["Same forward and backward","Only forward","Only backward","None"],"answer":"Same forward and backward"},
+    {"question":"Which method converts to uppercase in Python?","options":["upper()","caps()","big()","up()"],"answer":"upper()"},
+    {"question":"Length of string uses?","options":["count()","size()","len()","measure()"],"answer":"len()"},
+    {"question":"Anagram strings contain?","options":["Same chars rearranged","Only vowels","Only numbers","Same length only"],"answer":"Same chars rearranged"}
   ],
   "stack_quiz": [
-    {
-      "question": "Stack follows which principle?",
-      "options": ["FIFO", "LIFO", "Random", "Priority"],
-      "answer": "LIFO"
-    },
-    {
-      "question": "Which operation removes element from stack?",
-      "options": ["push", "pop", "peek", "insert"],
-      "answer": "pop"
-    }
+    {"question":"Stack follows which principle?","options":["FIFO","LIFO","Random","Priority"],"answer":"LIFO"},
+    {"question":"Which operation removes element from stack?","options":["push","pop","peek","insert"],"answer":"pop"},
+    {"question":"Which operation adds element to stack?","options":["enqueue","push","delete","rear"],"answer":"push"},
+    {"question":"Top element can be viewed using?","options":["peek","pop","push","merge"],"answer":"peek"},
+    {"question":"Balanced parentheses often uses?","options":["Queue","Stack","Tree","Heap"],"answer":"Stack"}
   ],
   "queue": [
     "Implement queue using array",
@@ -89,19 +101,24 @@
     "Check if queue is empty",
     "Generate binary numbers using queue",
     "Reverse first k elements of queue",
-    "Implement circular queue"
+    "Implement circular queue",
+    "Implement deque",
+    "Implement priority queue basics",
+    "Queue using two stacks",
+    "Stack using two queues",
+    "Interleave first half of queue",
+    "Reverse entire queue",
+    "Find size of queue",
+    "Sliding window maximum using deque",
+    "LRU cache concept using queue",
+    "Round robin scheduling using queue"
   ],
   "queue_quiz": [
-    {
-      "question": "Queue follows which principle?",
-      "options": ["FIFO", "LIFO", "Priority", "Random"],
-      "answer": "FIFO"
-    },
-    {
-      "question": "Which operation inserts element into queue?",
-      "options": ["push", "enqueue", "pop", "peek"],
-      "answer": "enqueue"
-    }
+    {"question":"Queue follows which principle?","options":["FIFO","LIFO","Priority","Random"],"answer":"FIFO"},
+    {"question":"Which operation inserts element into queue?","options":["push","enqueue","pop","peek"],"answer":"enqueue"},
+    {"question":"Which operation removes front element?","options":["dequeue","peek","push","insert"],"answer":"dequeue"},
+    {"question":"Front of queue indicates?","options":["Newest item","Next removal","Middle item","Largest item"],"answer":"Next removal"},
+    {"question":"Printer scheduling commonly uses?","options":["Queue","Trie","Heap only","Graph"],"answer":"Queue"}
   ],
   "linked_list": [
     "Traverse a linked list",
@@ -113,130 +130,255 @@
     "Delete node by value",
     "Search element in linked list",
     "Reverse a linked list",
-    "Find middle node of linked list"
+    "Find middle node of linked list",
+    "Detect loop in linked list",
+    "Find nth node from end",
+    "Remove duplicates from sorted list",
+    "Merge two sorted linked lists",
+    "Check palindrome linked list",
+    "Split circular linked list",
+    "Delete entire linked list",
+    "Count nodes in linked list",
+    "Swap nodes pairwise",
+    "Rotate linked list by k nodes"
   ],
   "linked_list_quiz": [
-    {
-      "question": "Linked List stores elements in?",
-      "options": ["Contiguous memory", "Nodes with pointers", "Stack form", "Queue form"],
-      "answer": "Nodes with pointers"
-    },
-    {
-      "question": "Which pointer stores next node address in singly linked list?",
-      "options": ["prev", "random", "next", "head"],
-      "answer": "next"
-    }
+    {"question":"Linked List stores elements in?","options":["Contiguous memory","Nodes with pointers","Stack form","Queue form"],"answer":"Nodes with pointers"},
+    {"question":"Which pointer stores next node address in singly linked list?","options":["prev","random","next","head"],"answer":"next"},
+    {"question":"Insertion at beginning of linked list is usually?","options":["O(1)","O(n)","O(log n)","Impossible"],"answer":"O(1)"},
+    {"question":"Linked list random access is?","options":["Fast O(1)","Sequential O(n)","Always O(log n)","Constant"],"answer":"Sequential O(n)"},
+    {"question":"Last node points to NULL in?","options":["Singly linked list","Heap","Trie","Stack"],"answer":"Singly linked list"}
   ],
   "trees": [
     "Implement inorder traversal",
     "Implement preorder traversal",
     "Implement postorder traversal",
     "Find height of binary tree",
-    "Count leaf nodes in tree"
+    "Count leaf nodes in tree",
+    "Level order traversal",
+    "Find diameter of tree",
+    "Check balanced binary tree",
+    "Find maximum node in tree",
+    "Find minimum node in tree",
+    "Count total nodes",
+    "Find ancestors of node",
+    "Print left view of tree",
+    "Print right view of tree",
+    "Lowest common ancestor",
+    "Check identical trees",
+    "Mirror a binary tree",
+    "Zigzag traversal",
+    "Boundary traversal",
+    "Serialize binary tree"
   ],
   "sorting": [
     "Implement bubble sort",
     "Implement selection sort",
     "Implement insertion sort",
     "Implement merge sort",
-    "Implement quick sort"
+    "Implement quick sort",
+    "Implement heap sort",
+    "Implement counting sort",
+    "Implement radix sort",
+    "Implement shell sort",
+    "Sort strings alphabetically",
+    "Sort array in descending order",
+    "Sort nearly sorted array",
+    "Find kth smallest after sorting",
+    "Stable vs unstable sort compare",
+    "Best case of insertion sort",
+    "Worst case of bubble sort",
+    "Sort linked list using merge sort",
+    "External sorting concept",
+    "Custom comparator sorting",
+    "Dutch national flag sort"
   ],
   "searching": [
     "Implement linear search",
     "Implement binary search",
     "Find first occurrence of element",
     "Find last occurrence of element",
-    "Count occurrences using binary search"
+    "Count occurrences using binary search",
+    "Jump search algorithm",
+    "Interpolation search",
+    "Exponential search",
+    "Ternary search",
+    "Search in rotated sorted array",
+    "Search in matrix",
+    "Find peak element",
+    "Find floor of number",
+    "Find ceil of number",
+    "Search insert position",
+    "Find missing number using search",
+    "Find duplicate using binary search idea",
+    "Find minimum in rotated array",
+    "Search range of target",
+    "Binary search on answer"
   ],
   "recursion": [
     "Find factorial using recursion",
     "Generate Fibonacci using recursion",
     "Reverse string using recursion",
     "Solve Tower of Hanoi",
-    "Find sum of digits recursively"
+    "Find sum of digits recursively",
+    "Print numbers 1 to n recursively",
+    "Print numbers n to 1 recursively",
+    "Check palindrome recursively",
+    "Power of number recursively",
+    "Binary search recursively",
+    "Find GCD recursively",
+    "Count digits recursively",
+    "Sum of array recursively",
+    "Subset generation",
+    "Permutation generation",
+    "N queens basics",
+    "Maze path recursion",
+    "Josephus problem",
+    "Recursive insertion sort",
+    "Recursive stack reverse"
   ],
   "trees_quiz": [
-    {
-      "question": "Top node of tree is called?",
-      "options": ["Leaf", "Root", "Parent", "Child"],
-      "answer": "Root"
-    }
+    {"question":"Top node of tree is called?","options":["Leaf","Root","Parent","Child"],"answer":"Root"},
+    {"question":"Node with no children is called?","options":["Root","Leaf","Edge","Ancestor"],"answer":"Leaf"},
+    {"question":"Traversal Left-Root-Right is?","options":["Preorder","Inorder","Postorder","Levelorder"],"answer":"Inorder"},
+    {"question":"Height of single node tree is commonly?","options":["0 or 1 by convention","5","-10","Undefined only"],"answer":"0 or 1 by convention"},
+    {"question":"Binary tree max children per node?","options":["1","2","3","Unlimited"],"answer":"2"}
   ],
   "sorting_quiz": [
-    {
-      "question": "Which sorting algorithm repeatedly swaps adjacent elements?",
-      "options": ["Merge Sort", "Quick Sort", "Bubble Sort", "Heap Sort"],
-      "answer": "Bubble Sort"
-    }
+    {"question":"Which sorting algorithm repeatedly swaps adjacent elements?","options":["Merge Sort","Quick Sort","Bubble Sort","Heap Sort"],"answer":"Bubble Sort"},
+    {"question":"Which sort uses divide and conquer?","options":["Merge Sort","Bubble Sort","Selection Sort","Insertion Sort"],"answer":"Merge Sort"},
+    {"question":"Best case of bubble sort optimized can be?","options":["O(n)","O(n^2)","O(log n)","O(1)"],"answer":"O(n)"},
+    {"question":"Which sort selects minimum each pass?","options":["Selection Sort","Quick Sort","Heap Sort","Radix"],"answer":"Selection Sort"},
+    {"question":"Quick sort average complexity is?","options":["O(n log n)","O(n^2)","O(1)","O(log n)"],"answer":"O(n log n)"}
   ],
   "searching_quiz": [
-    {
-      "question": "Binary search works on?",
-      "options": ["Any array", "Sorted array", "Linked list only", "Queue only"],
-      "answer": "Sorted array"
-    }
+    {"question":"Binary search works on?","options":["Any array","Sorted array","Linked list only","Queue only"],"answer":"Sorted array"},
+    {"question":"Linear search worst case is?","options":["O(1)","O(log n)","O(n)","O(n log n)"],"answer":"O(n)"},
+    {"question":"Binary search middle element is checked first?","options":["Yes","No","Never","Only strings"],"answer":"Yes"},
+    {"question":"Which search needs sorted data?","options":["Binary Search","Linear Search","DFS","BFS"],"answer":"Binary Search"},
+    {"question":"Jump search is improvement over?","options":["Linear Search","Heap Sort","Trie","Recursion"],"answer":"Linear Search"}
   ],
   "recursion_quiz": [
-    {
-      "question": "Every recursive function must have?",
-      "options": ["Loop", "Base case", "Pointer", "Array"],
-      "answer": "Base case"
-    }
+    {"question":"Every recursive function must have?","options":["Loop","Base case","Pointer","Array"],"answer":"Base case"},
+    {"question":"Recursion uses which memory structure?","options":["Queue","Stack","Heap only","Trie"],"answer":"Stack"},
+    {"question":"Factorial of 0 is?","options":["0","1","-1","Undefined"],"answer":"1"},
+    {"question":"Infinite recursion causes?","options":["Stack overflow","Sorting","Compilation only","Nothing"],"answer":"Stack overflow"},
+    {"question":"Recursive call solves?","options":["Smaller subproblem","Random problem","Bigger only","No problem"],"answer":"Smaller subproblem"}
   ],
   "graphs": [
     "Implement BFS traversal",
     "Implement DFS traversal",
     "Detect cycle in graph",
     "Find shortest path using Dijkstra",
-    "Count connected components"
+    "Count connected components",
+    "Topological sort",
+    "Kruskal minimum spanning tree",
+    "Prim minimum spanning tree",
+    "Bellman Ford shortest path",
+    "Floyd Warshall algorithm",
+    "Check bipartite graph",
+    "Find bridges in graph",
+    "Find articulation points",
+    "Strongly connected components",
+    "Clone graph",
+    "Number of islands",
+    "Course schedule problem",
+    "Union find basics",
+    "Shortest path in unweighted graph",
+    "Detect cycle in directed graph"
   ],
   "heap": [
     "Insert into max heap",
     "Delete root from heap",
     "Build heap from array",
     "Implement heapsort",
-    "Find kth largest element"
+    "Find kth largest element",
+    "Find kth smallest element",
+    "Convert min heap to max heap",
+    "Heapify a node",
+    "Merge two heaps",
+    "Running median using heaps",
+    "Priority queue basics",
+    "Connect ropes minimum cost",
+    "Top k frequent elements",
+    "Sort nearly sorted array using heap",
+    "Check if array is heap",
+    "Min heap insertion",
+    "Delete arbitrary heap node",
+    "Heap implementation from scratch",
+    "Maximum combinations using heap",
+    "Smallest range from lists"
   ],
   "dynamic_programming": [
     "Find Fibonacci using DP",
     "Solve 0/1 Knapsack",
     "Longest Common Subsequence",
     "Coin Change problem",
-    "Climbing stairs problem"
+    "Climbing stairs problem",
+    "Longest Increasing Subsequence",
+    "Edit distance",
+    "Matrix chain multiplication",
+    "Rod cutting problem",
+    "Subset sum problem",
+    "Partition equal subset sum",
+    "Minimum path sum grid",
+    "Unique paths problem",
+    "House robber problem",
+    "Decode ways",
+    "Egg dropping puzzle",
+    "Palindrome partitioning",
+    "Word break problem",
+    "Wildcard matching",
+    "Maximum sum increasing subsequence"
   ],
   "trie": [
     "Insert word into trie",
     "Search word in trie",
     "Prefix matching in trie",
     "Delete word from trie",
-    "Autocomplete using trie"
+    "Autocomplete using trie",
+    "Count words with prefix",
+    "Longest common prefix using trie",
+    "Replace words using trie",
+    "Spell checker using trie",
+    "Word dictionary with wildcard",
+    "Phone contacts suggestion",
+    "Count distinct substrings",
+    "Maximum XOR pair using trie",
+    "Binary trie basics",
+    "Shortest unique prefix",
+    "Trie traversal",
+    "Case insensitive trie",
+    "URL routing using trie",
+    "Search multiple patterns",
+    "Dictionary implementation using trie"
   ],
   "graphs_quiz": [
-    {
-      "question": "Graph traversal using queue is?",
-      "options": ["DFS", "BFS", "Heap", "Trie"],
-      "answer": "BFS"
-    }
+    {"question":"Graph traversal using queue is?","options":["DFS","BFS","Heap","Trie"],"answer":"BFS"},
+    {"question":"Graph traversal using stack/recursion is?","options":["DFS","BFS","Queue","Sort"],"answer":"DFS"},
+    {"question":"A graph edge connecting same node is called?","options":["Loop","Tree","Root","Leaf"],"answer":"Loop"},
+    {"question":"Shortest path in weighted graph commonly uses?","options":["Dijkstra","Bubble Sort","Stack","Trie"],"answer":"Dijkstra"},
+    {"question":"Vertices are also called?","options":["Nodes","Queues","Arrays","Roots only"],"answer":"Nodes"}
   ],
   "heap_quiz": [
-    {
-      "question": "In Max Heap, root contains?",
-      "options": ["Smallest", "Largest", "Middle", "Random"],
-      "answer": "Largest"
-    }
+    {"question":"In Max Heap, root contains?","options":["Smallest","Largest","Middle","Random"],"answer":"Largest"},
+    {"question":"Heap is commonly implemented using?","options":["Array","Linked list","Queue only","Graph"],"answer":"Array"},
+    {"question":"Priority queue often uses?","options":["Heap","Trie","Stack","String"],"answer":"Heap"},
+    {"question":"Children of index i are commonly at?","options":["2i+1 and 2i+2","i+1 only","3i","None"],"answer":"2i+1 and 2i+2"},
+    {"question":"Heapify helps maintain?","options":["Heap property","Graph edges","String length","Hash key"],"answer":"Heap property"}
   ],
   "dynamic_programming_quiz": [
-    {
-      "question": "DP mainly avoids solving?",
-      "options": ["Unique problems", "Overlapping subproblems repeatedly", "Arrays", "Graphs"],
-      "answer": "Overlapping subproblems repeatedly"
-    }
+    {"question":"DP mainly avoids solving?","options":["Unique problems","Overlapping subproblems repeatedly","Arrays","Graphs"],"answer":"Overlapping subproblems repeatedly"},
+    {"question":"DP uses memoization and?","options":["Tabulation","Rotation","Deletion","Traversal"],"answer":"Tabulation"},
+    {"question":"Fibonacci can be optimized using?","options":["DP","Heap only","Trie","Queue only"],"answer":"DP"},
+    {"question":"0/1 Knapsack is classic?","options":["DP problem","Graph only","Sorting only","Trie problem"],"answer":"DP problem"},
+    {"question":"Memoization stores?","options":["Computed results","Edges","Pointers only","Passwords"],"answer":"Computed results"}
   ],
   "trie_quiz": [
-    {
-      "question": "Trie is mainly used for?",
-      "options": ["Sorting numbers", "Prefix search", "Stack operations", "Binary tree balancing"],
-      "answer": "Prefix search"
-    }
+    {"question":"Trie is mainly used for?","options":["Sorting numbers","Prefix search","Stack operations","Binary tree balancing"],"answer":"Prefix search"},
+    {"question":"Trie nodes commonly represent?","options":["Characters","Matrices","Queues","Integers only"],"answer":"Characters"},
+    {"question":"Autocomplete systems often use?","options":["Trie","Heap only","Stack","Graph"],"answer":"Trie"},
+    {"question":"Searching word in trie depends on?","options":["Word length","Total users only","Graph size","Heap height only"],"answer":"Word length"},
+    {"question":"Trie is efficient for many?","options":["Prefix queries","Sorting swaps","Stack pops","Heap deletes"],"answer":"Prefix queries"}
   ]
 }
