@@ -1,5 +1,14 @@
 import json
 import os
+import time
+
+# ANSI color constants
+BLUE = "\033[94m"
+GREEN = "\033[92m"
+YELLOW = "\033[93m"
+RED = "\033[91m"
+CYAN = "\033[96m"
+RESET = "\033[0m"
 
 
 def save_progress(score, total):
@@ -15,6 +24,19 @@ def save_progress(score, total):
 
 
 
+def show_question_box(number, question, options):
+    width = 70
+    print(f"{BLUE}┏" + "━" * width + f"┓{RESET}")
+    print(f"{BLUE}┃{YELLOW}{(' Question ' + str(number)).center(width)}{BLUE}┃{RESET}")
+    print(f"{BLUE}┣" + "━" * width + f"┫{RESET}")
+    print(f"{BLUE}┃ {question.ljust(width-1)}{BLUE}┃{RESET}")
+    print(f"{BLUE}┣" + "━" * width + f"┫{RESET}")
+    for i, opt in enumerate(options, start=1):
+        row = f"[{i}] {opt}"
+        print(f"{BLUE}┃ {GREEN}{row.ljust(width-1)}{BLUE}┃{RESET}")
+    print(f"{BLUE}┗" + "━" * width + f"┛{RESET}")
+
+
 def run_quiz(questions):
     if not questions:
         print("\nNo quiz available for this topic.")
@@ -24,22 +46,20 @@ def run_quiz(questions):
     total = len(questions)
 
     for i, q in enumerate(questions, start=1):
-        print(f"\nQ{i}: {q['question']}")
-
-        for idx, option in enumerate(q["options"], start=1):
-            print(f"{idx}. {option}")
+        print()
+        show_question_box(i, q['question'], q['options'])
 
         while True:
             choice = input("Enter your choice: ").strip()
 
             if not choice.isdigit():
-                print("Please enter a valid number ❌")
+                print(f"{RED}Please enter a valid number ❌{RESET}")
                 continue
 
             choice = int(choice)
 
             if choice < 1 or choice > len(q["options"]):
-                print("Invalid choice ❌")
+                print(f"{RED}Invalid choice ❌{RESET}")
                 continue
 
             break
@@ -47,16 +67,19 @@ def run_quiz(questions):
         selected_option = q["options"][choice - 1]
 
         if selected_option == q["answer"]:
-            print("Correct ✅")
+            print(f"{GREEN}Correct ✅{RESET}")
             score += 1
         else:
-            print(f"Wrong ❌ (Correct: {q['answer']})")
+            print(f"{RED}Wrong ❌{RESET} {YELLOW}(Correct: {q['answer']}){RESET}")
 
     percentage = round((score / total) * 100, 2)
 
-    print("\n" + "=" * 35)
-    print(f"Your Final Score: {score}/{total}")
-    print(f"Percentage: {percentage}%")
-    print("=" * 35)
+    print()
+    print(f"{BLUE}┏" + "━" * 35 + f"┓{RESET}")
+    print(f"{BLUE}┃{YELLOW}{' QUIZ RESULT 🏆 '.center(35)}{BLUE}┃{RESET}")
+    print(f"{BLUE}┣" + "━" * 35 + f"┫{RESET}")
+    print(f"{BLUE}┃ {GREEN}{('Score: ' + str(score) + '/' + str(total)).ljust(34)}{BLUE}┃{RESET}")
+    print(f"{BLUE}┃ {CYAN}{('Percentage: ' + str(percentage) + '%').ljust(34)}{BLUE}┃{RESET}")
+    print(f"{BLUE}┗" + "━" * 35 + f"┛{RESET}")
 
     save_progress(score, total)

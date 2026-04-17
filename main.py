@@ -37,7 +37,26 @@ def loading_screen():
     time.sleep(1)
     clear()
 
+def exit_screen():
+    clear()
+    print(f"{BLUE}" + "=" * 50 + f"{RESET}")
+    type_text("        THANK YOU FOR USING DSA PACKAGE ⚡", YELLOW, 0.03)
+    print(f"{BLUE}" + "=" * 50 + f"{RESET}")
+    print(f"\n{CYAN}Saving progress...{RESET}")
+
+    bar = ""
+    for _ in range(20):
+        bar += "█"
+        print(f"\r{GREEN}[{bar:<20}]{RESET}", end="")
+        time.sleep(0.06)
+
+    print(f"\n\n{YELLOW}Goodbye 👋 See you again!{RESET}")
+    time.sleep(1.5)
+
 
 if __name__ == "__main__":
     loading_screen()
-    main_menu()
+    try:
+        main_menu()
+    finally:
+        exit_screen()
