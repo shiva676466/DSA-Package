@@ -1,38 +1,35 @@
-# 🚀 DSA PACKAGE ⚡
+# DSA Package ⚡
 
-A powerful **Console-Based Data Structures & Algorithms Learning Platform** built in **Python**.
+A console-based **Data Structures & Algorithms Learning Platform** built in Python.
 
-This project helps users learn DSA from **Beginner to Advanced** levels with:
+This project helps users learn DSA through:
 
-- 📘 Theory
-- 💻 Multi-language Code (Python / C++ / Java)
-- 📌 Practice Questions
-- 🧠 Quiz System
-- 🎬 Console Animations
-- 🎨 Beautiful Colored UI
-- ⚡ Typing Effects & Loading Screen
+- 📘 Theory explanations
+- 💻 Code examples in Python / C++ / Java
+- ❓ Practice questions
+- 🧠 Quiz system
+- 🎬 Console animations / visualizations
+- 📈 Beginner, Intermediate, and Advanced levels
+- 🎨 Beautiful terminal UI with loading screen and effects
 
 ---
 
-# 📚 Levels Included
+# 🚀 Features
 
-## 🟢 Beginner
-
+## 🟢 Beginner Level
 - Arrays
 - Strings
 - Stack
 - Queue
 - Linked List
 
-## 🟡 Intermediate
-
+## 🟡 Intermediate Level
 - Trees
 - Sorting
 - Searching
 - Recursion
 
-## 🔴 Advanced
-
+## 🔴 Advanced Level
 - Graphs
 - Heap
 - Dynamic Programming
@@ -40,87 +37,112 @@ This project helps users learn DSA from **Beginner to Advanced** levels with:
 
 ---
 
-# ✨ Features
+# 📁 Project Structure
 
-## 🎓 Learning Mode
-
-Each topic contains:
-
-- Theory Explanation
-- Code Examples
-- Practice Questions
-- Quiz Mode
-- Animations (selected topics)
-
----
-
-## 💻 Multi-Language Code Support
-
-View examples in:
-
-- Python 🐍
-- C++ ⚙️
-- Java ☕
-
----
-
-## 🎬 Console Animations
-
-Interactive visual animations available for:
-
-- Arrays
-- Stack
-- Queue
-- Linked List
-
----
-
-## 🎨 Beautiful UI
-
-- Colored Menus
-- Loading Screen
-- Typing Text Effects
-- Styled Code Viewer
-
----
-
-# 🗂️ Project Structure
-
-```bash
+```text
 DSA-PACKAGE/
 │── main.py
 │── menu.py
 │── levels.py
 │
 ├── topics/
-│   ├── beginner.py
-│   ├── intermediate.py
-│   └── advanced.py
-│
 ├── content/
-│   ├── topic_handler.py
-│   ├── arrays.py
-│   ├── strings.py
-│   ├── stacks.py
-│   ├── queue.py
-│   └── ...
-│
 ├── animations/
-│   ├── arrays_anim.py
-│   ├── stack_anim.py
-│   ├── queue_anim.py
-│   └── linked_list_anim.py
-│
 ├── services/
-│   ├── content_service.py
-│   └── quiz_service.py
-│
 ├── utils/
-│   ├── ui.py
-│   ├── quiz_engine.py
-│   └── file_handler.py
-│
 └── data/
-    ├── theory.json
-    ├── code.json
-    └── questions.json
+```
+
+---
+
+# 🛠 Requirements
+
+- Python 3.8 or above installed
+
+Check version:
+
+```bash
+python --version
+```
+
+or
+
+```bash
+python3 --version
+```
+
+---
+
+# ▶️ How to Run on Local Computer
+
+## 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/shiva676466/DSA-Package.git
+```
+
+## 2️⃣ Go to Project Folder
+
+```bash
+cd DSA-Package
+```
+
+## 3️⃣ Run the Project
+
+### Windows
+
+```bash
+python main.py
+```
+
+### macOS / Linux
+
+```bash
+python3 main.py
+```
+
+---
+
+# 🧪 Example Flow
+
+```text
+Start App
+→ Select Level
+→ Select Topic
+→ Theory / Code / Questions / Quiz / Animation
+```
+
+---
+
+# 🎯 Educational Purpose
+
+This project is designed for:
+   
+- Students learning DSA
+- Beginners practicing coding concepts
+- Quick revision of topics
+- Interactive console learning
+
+---
+
+# 👨‍💻 Author
+
+**Shiva**
+
+GitHub: https://github.com/shiva676466
+
+---
+
+# ⭐ Future Improvements
+
+- User progress tracking
+- More animations
+- Search topics
+- GUI version
+- Online leaderboard
+
+---
+
+# 📜 License
+
+This project is open for learning and educational use.
