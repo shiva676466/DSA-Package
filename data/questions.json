@@ -71,25 +71,25 @@
     "Celebrity problem using stack"
   ],
   "arrays_quiz": [
-    {"question":"What is time complexity of accessing array element?","options":["O(n)","O(log n)","O(1)","O(n log n)"],"answer":"O(1)"},
-    {"question":"Array index starts from?","options":["1","0","-1","Depends"],"answer":"0"},
-    {"question":"Arrays store elements in?","options":["Random memory","Contiguous memory","Pointers only","Stack memory"],"answer":"Contiguous memory"},
-    {"question":"Which search works best on sorted array?","options":["Linear Search","Binary Search","DFS","BFS"],"answer":"Binary Search"},
-    {"question":"Insertion at end of dynamic array is usually?","options":["O(1) amortized","O(n^2)","O(log n)","Impossible"],"answer":"O(1) amortized"}
+    {"question":"What is time complexity of accessing array element?","options":["O(n)","O(log n)","O(1)","O(n log n)"],"answer":"O(1)","explanation":"Arrays support direct indexing, so accessing an element by index takes constant time O(1)."},
+    {"question":"Array index starts from?","options":["1","0","-1","Depends"],"answer":"0","explanation":"Array indices start from 0 in most programming languages, meaning the first element is at index 0."},
+    {"question":"Arrays store elements in?","options":["Random memory","Contiguous memory","Pointers only","Stack memory"],"answer":"Contiguous memory","explanation":"Arrays store elements in contiguous memory locations, enabling efficient indexing."},
+    {"question":"Which search works best on sorted array?","options":["Linear Search","Binary Search","DFS","BFS"],"answer":"Binary Search","explanation":"Binary Search works best on sorted arrays as it repeatedly divides the search interval in half."},
+    {"question":"Insertion at end of dynamic array is usually?","options":["O(1) amortized","O(n^2)","O(log n)","Impossible"],"answer":"O(1) amortized","explanation":"Dynamic arrays resize occasionally, so insertions at the end are O(1) on average (amortized)."}
   ],
   "strings_quiz": [
-    {"question":"Which data type is used for strings in Python?","options":["int","str","char","float"],"answer":"str"},
-    {"question":"Palindrome means?","options":["Same forward and backward","Only forward","Only backward","None"],"answer":"Same forward and backward"},
-    {"question":"Which method converts to uppercase in Python?","options":["upper()","caps()","big()","up()"],"answer":"upper()"},
-    {"question":"Length of string uses?","options":["count()","size()","len()","measure()"],"answer":"len()"},
-    {"question":"Anagram strings contain?","options":["Same chars rearranged","Only vowels","Only numbers","Same length only"],"answer":"Same chars rearranged"}
+    {"question":"Which data type is used for strings in Python?","options":["int","str","char","float"],"answer":"str","explanation":"The 'str' data type in Python is used to represent strings of characters."},
+    {"question":"Palindrome means?","options":["Same forward and backward","Only forward","Only backward","None"],"answer":"Same forward and backward","explanation":"A palindrome reads the same forward and backward, such as 'level' or 'radar'."},
+    {"question":"Which method converts to uppercase in Python?","options":["upper()","caps()","big()","up()"],"answer":"upper()","explanation":"The upper() method returns the string with all alphabetic characters converted to uppercase."},
+    {"question":"Length of string uses?","options":["count()","size()","len()","measure()"],"answer":"len()","explanation":"The len() function returns the number of characters in a string."},
+    {"question":"Anagram strings contain?","options":["Same chars rearranged","Only vowels","Only numbers","Same length only"],"answer":"Same chars rearranged","explanation":"Anagrams are strings made by rearranging the same characters, such as 'listen' and 'silent'."}
   ],
   "stack_quiz": [
-    {"question":"Stack follows which principle?","options":["FIFO","LIFO","Random","Priority"],"answer":"LIFO"},
-    {"question":"Which operation removes element from stack?","options":["push","pop","peek","insert"],"answer":"pop"},
-    {"question":"Which operation adds element to stack?","options":["enqueue","push","delete","rear"],"answer":"push"},
-    {"question":"Top element can be viewed using?","options":["peek","pop","push","merge"],"answer":"peek"},
-    {"question":"Balanced parentheses often uses?","options":["Queue","Stack","Tree","Heap"],"answer":"Stack"}
+    {"question":"Stack follows which principle?","options":["FIFO","LIFO","Random","Priority"],"answer":"LIFO","explanation":"Stack follows Last In First Out, so the most recently inserted item is removed first."},
+    {"question":"Which operation removes element from stack?","options":["push","pop","peek","insert"],"answer":"pop","explanation":"The pop operation removes and returns the top element from the stack."},
+    {"question":"Which operation adds element to stack?","options":["enqueue","push","delete","rear"],"answer":"push","explanation":"The push operation adds an element to the top of the stack."},
+    {"question":"Top element can be viewed using?","options":["peek","pop","push","merge"],"answer":"peek","explanation":"The peek operation returns the top element of the stack without removing it."},
+    {"question":"Balanced parentheses often uses?","options":["Queue","Stack","Tree","Heap"],"answer":"Stack","explanation":"Stacks are used to check balanced parentheses by pushing and popping brackets."}
   ],
   "queue": [
     "Implement queue using array",
@@ -114,11 +114,11 @@
     "Round robin scheduling using queue"
   ],
   "queue_quiz": [
-    {"question":"Queue follows which principle?","options":["FIFO","LIFO","Priority","Random"],"answer":"FIFO"},
-    {"question":"Which operation inserts element into queue?","options":["push","enqueue","pop","peek"],"answer":"enqueue"},
-    {"question":"Which operation removes front element?","options":["dequeue","peek","push","insert"],"answer":"dequeue"},
-    {"question":"Front of queue indicates?","options":["Newest item","Next removal","Middle item","Largest item"],"answer":"Next removal"},
-    {"question":"Printer scheduling commonly uses?","options":["Queue","Trie","Heap only","Graph"],"answer":"Queue"}
+    {"question":"Queue follows which principle?","options":["FIFO","LIFO","Priority","Random"],"answer":"FIFO","explanation":"Queue follows First In First Out, so the earliest inserted item is removed first."},
+    {"question":"Which operation inserts element into queue?","options":["push","enqueue","pop","peek"],"answer":"enqueue","explanation":"The enqueue operation adds an element to the rear of the queue."},
+    {"question":"Which operation removes front element?","options":["dequeue","peek","push","insert"],"answer":"dequeue","explanation":"The dequeue operation removes and returns the element at the front of the queue."},
+    {"question":"Front of queue indicates?","options":["Newest item","Next removal","Middle item","Largest item"],"answer":"Next removal","explanation":"The front of the queue is the next item to be removed according to FIFO order."},
+    {"question":"Printer scheduling commonly uses?","options":["Queue","Trie","Heap only","Graph"],"answer":"Queue","explanation":"Queues are used in printer scheduling to process print jobs in the order they arrive."}
   ],
   "linked_list": [
     "Traverse a linked list",
@@ -143,11 +143,11 @@
     "Rotate linked list by k nodes"
   ],
   "linked_list_quiz": [
-    {"question":"Linked List stores elements in?","options":["Contiguous memory","Nodes with pointers","Stack form","Queue form"],"answer":"Nodes with pointers"},
-    {"question":"Which pointer stores next node address in singly linked list?","options":["prev","random","next","head"],"answer":"next"},
-    {"question":"Insertion at beginning of linked list is usually?","options":["O(1)","O(n)","O(log n)","Impossible"],"answer":"O(1)"},
-    {"question":"Linked list random access is?","options":["Fast O(1)","Sequential O(n)","Always O(log n)","Constant"],"answer":"Sequential O(n)"},
-    {"question":"Last node points to NULL in?","options":["Singly linked list","Heap","Trie","Stack"],"answer":"Singly linked list"}
+    {"question":"Linked List stores elements in?","options":["Contiguous memory","Nodes with pointers","Stack form","Queue form"],"answer":"Nodes with pointers","explanation":"Linked lists store elements in nodes, each containing data and a pointer to the next node."},
+    {"question":"Which pointer stores next node address in singly linked list?","options":["prev","random","next","head"],"answer":"next","explanation":"The 'next' pointer in a singly linked list points to the next node in the sequence."},
+    {"question":"Insertion at beginning of linked list is usually?","options":["O(1)","O(n)","O(log n)","Impossible"],"answer":"O(1)","explanation":"Insertion at the beginning of a linked list takes constant time O(1) by updating pointers."},
+    {"question":"Linked list random access is?","options":["Fast O(1)","Sequential O(n)","Always O(log n)","Constant"],"answer":"Sequential O(n)","explanation":"Random access in a linked list is O(n) because nodes must be traversed sequentially."},
+    {"question":"Last node points to NULL in?","options":["Singly linked list","Heap","Trie","Stack"],"answer":"Singly linked list","explanation":"In a singly linked list, the last node's next pointer is set to NULL to mark the end."}
   ],
   "trees": [
     "Implement inorder traversal",
@@ -238,32 +238,32 @@
     "Recursive stack reverse"
   ],
   "trees_quiz": [
-    {"question":"Top node of tree is called?","options":["Leaf","Root","Parent","Child"],"answer":"Root"},
-    {"question":"Node with no children is called?","options":["Root","Leaf","Edge","Ancestor"],"answer":"Leaf"},
-    {"question":"Traversal Left-Root-Right is?","options":["Preorder","Inorder","Postorder","Levelorder"],"answer":"Inorder"},
-    {"question":"Height of single node tree is commonly?","options":["0 or 1 by convention","5","-10","Undefined only"],"answer":"0 or 1 by convention"},
-    {"question":"Binary tree max children per node?","options":["1","2","3","Unlimited"],"answer":"2"}
+    {"question":"Top node of tree is called?","options":["Leaf","Root","Parent","Child"],"answer":"Root","explanation":"The root is the topmost node in a tree from which all other nodes descend."},
+    {"question":"Node with no children is called?","options":["Root","Leaf","Edge","Ancestor"],"answer":"Leaf","explanation":"A leaf node has no children and is at the end of a tree branch."},
+    {"question":"Traversal Left-Root-Right is?","options":["Preorder","Inorder","Postorder","Levelorder"],"answer":"Inorder","explanation":"Inorder traversal visits the left subtree, then the root, then the right subtree."},
+    {"question":"Height of single node tree is commonly?","options":["0 or 1 by convention","5","-10","Undefined only"],"answer":"0 or 1 by convention","explanation":"The height of a single node tree is defined as 0 or 1 depending on convention."},
+    {"question":"Binary tree max children per node?","options":["1","2","3","Unlimited"],"answer":"2","explanation":"In a binary tree, each node can have at most two children."}
   ],
   "sorting_quiz": [
-    {"question":"Which sorting algorithm repeatedly swaps adjacent elements?","options":["Merge Sort","Quick Sort","Bubble Sort","Heap Sort"],"answer":"Bubble Sort"},
-    {"question":"Which sort uses divide and conquer?","options":["Merge Sort","Bubble Sort","Selection Sort","Insertion Sort"],"answer":"Merge Sort"},
-    {"question":"Best case of bubble sort optimized can be?","options":["O(n)","O(n^2)","O(log n)","O(1)"],"answer":"O(n)"},
-    {"question":"Which sort selects minimum each pass?","options":["Selection Sort","Quick Sort","Heap Sort","Radix"],"answer":"Selection Sort"},
-    {"question":"Quick sort average complexity is?","options":["O(n log n)","O(n^2)","O(1)","O(log n)"],"answer":"O(n log n)"}
+    {"question":"Which sorting algorithm repeatedly swaps adjacent elements?","options":["Merge Sort","Quick Sort","Bubble Sort","Heap Sort"],"answer":"Bubble Sort","explanation":"Bubble Sort repeatedly compares and swaps adjacent elements to sort the list."},
+    {"question":"Which sort uses divide and conquer?","options":["Merge Sort","Bubble Sort","Selection Sort","Insertion Sort"],"answer":"Merge Sort","explanation":"Merge Sort uses divide and conquer by recursively splitting and merging arrays."},
+    {"question":"Best case of bubble sort optimized can be?","options":["O(n)","O(n^2)","O(log n)","O(1)"],"answer":"O(n)","explanation":"Optimized Bubble Sort can achieve O(n) time when the array is already sorted."},
+    {"question":"Which sort selects minimum each pass?","options":["Selection Sort","Quick Sort","Heap Sort","Radix"],"answer":"Selection Sort","explanation":"Selection Sort finds the minimum element in each pass and places it in the correct position."},
+    {"question":"Quick sort average complexity is?","options":["O(n log n)","O(n^2)","O(1)","O(log n)"],"answer":"O(n log n)","explanation":"Quick Sort has an average time complexity of O(n log n) due to its partitioning approach."}
   ],
   "searching_quiz": [
-    {"question":"Binary search works on?","options":["Any array","Sorted array","Linked list only","Queue only"],"answer":"Sorted array"},
-    {"question":"Linear search worst case is?","options":["O(1)","O(log n)","O(n)","O(n log n)"],"answer":"O(n)"},
-    {"question":"Binary search middle element is checked first?","options":["Yes","No","Never","Only strings"],"answer":"Yes"},
-    {"question":"Which search needs sorted data?","options":["Binary Search","Linear Search","DFS","BFS"],"answer":"Binary Search"},
-    {"question":"Jump search is improvement over?","options":["Linear Search","Heap Sort","Trie","Recursion"],"answer":"Linear Search"}
+    {"question":"Binary search works on?","options":["Any array","Sorted array","Linked list only","Queue only"],"answer":"Sorted array","explanation":"Binary search requires a sorted array to efficiently locate elements."},
+    {"question":"Linear search worst case is?","options":["O(1)","O(log n)","O(n)","O(n log n)"],"answer":"O(n)","explanation":"In the worst case, linear search checks each element, resulting in O(n) time."},
+    {"question":"Binary search middle element is checked first?","options":["Yes","No","Never","Only strings"],"answer":"Yes","explanation":"Binary search compares the target value to the middle element first."},
+    {"question":"Which search needs sorted data?","options":["Binary Search","Linear Search","DFS","BFS"],"answer":"Binary Search","explanation":"Binary search can only be applied to sorted data structures."},
+    {"question":"Jump search is improvement over?","options":["Linear Search","Heap Sort","Trie","Recursion"],"answer":"Linear Search","explanation":"Jump search improves on linear search by skipping ahead by fixed steps."}
   ],
   "recursion_quiz": [
-    {"question":"Every recursive function must have?","options":["Loop","Base case","Pointer","Array"],"answer":"Base case"},
-    {"question":"Recursion uses which memory structure?","options":["Queue","Stack","Heap only","Trie"],"answer":"Stack"},
-    {"question":"Factorial of 0 is?","options":["0","1","-1","Undefined"],"answer":"1"},
-    {"question":"Infinite recursion causes?","options":["Stack overflow","Sorting","Compilation only","Nothing"],"answer":"Stack overflow"},
-    {"question":"Recursive call solves?","options":["Smaller subproblem","Random problem","Bigger only","No problem"],"answer":"Smaller subproblem"}
+    {"question":"Every recursive function must have?","options":["Loop","Base case","Pointer","Array"],"answer":"Base case","explanation":"A base case stops the recursion and prevents infinite loops."},
+    {"question":"Recursion uses which memory structure?","options":["Queue","Stack","Heap only","Trie"],"answer":"Stack","explanation":"Recursive calls are stored on the call stack, which tracks function calls."},
+    {"question":"Factorial of 0 is?","options":["0","1","-1","Undefined"],"answer":"1","explanation":"By definition, the factorial of 0 is 1."},
+    {"question":"Infinite recursion causes?","options":["Stack overflow","Sorting","Compilation only","Nothing"],"answer":"Stack overflow","explanation":"Infinite recursion keeps adding calls to the stack, eventually causing a stack overflow."},
+    {"question":"Recursive call solves?","options":["Smaller subproblem","Random problem","Bigger only","No problem"],"answer":"Smaller subproblem","explanation":"Recursion breaks the problem into smaller subproblems until the base case is reached."}
   ],
   "graphs": [
     "Implement BFS traversal",
@@ -354,31 +354,31 @@
     "Dictionary implementation using trie"
   ],
   "graphs_quiz": [
-    {"question":"Graph traversal using queue is?","options":["DFS","BFS","Heap","Trie"],"answer":"BFS"},
-    {"question":"Graph traversal using stack/recursion is?","options":["DFS","BFS","Queue","Sort"],"answer":"DFS"},
-    {"question":"A graph edge connecting same node is called?","options":["Loop","Tree","Root","Leaf"],"answer":"Loop"},
-    {"question":"Shortest path in weighted graph commonly uses?","options":["Dijkstra","Bubble Sort","Stack","Trie"],"answer":"Dijkstra"},
-    {"question":"Vertices are also called?","options":["Nodes","Queues","Arrays","Roots only"],"answer":"Nodes"}
+    {"question":"Graph traversal using queue is?","options":["DFS","BFS","Heap","Trie"],"answer":"BFS","explanation":"Breadth First Search (BFS) uses a queue to explore nodes level by level."},
+    {"question":"Graph traversal using stack/recursion is?","options":["DFS","BFS","Queue","Sort"],"answer":"DFS","explanation":"Depth First Search (DFS) uses a stack or recursion to explore as far as possible along each branch."},
+    {"question":"A graph edge connecting same node is called?","options":["Loop","Tree","Root","Leaf"],"answer":"Loop","explanation":"An edge that starts and ends at the same node is called a loop."},
+    {"question":"Shortest path in weighted graph commonly uses?","options":["Dijkstra","Bubble Sort","Stack","Trie"],"answer":"Dijkstra","explanation":"Dijkstra's algorithm finds the shortest path in graphs with non-negative weights."},
+    {"question":"Vertices are also called?","options":["Nodes","Queues","Arrays","Roots only"],"answer":"Nodes","explanation":"Vertices in a graph are also known as nodes."}
   ],
   "heap_quiz": [
-    {"question":"In Max Heap, root contains?","options":["Smallest","Largest","Middle","Random"],"answer":"Largest"},
-    {"question":"Heap is commonly implemented using?","options":["Array","Linked list","Queue only","Graph"],"answer":"Array"},
-    {"question":"Priority queue often uses?","options":["Heap","Trie","Stack","String"],"answer":"Heap"},
-    {"question":"Children of index i are commonly at?","options":["2i+1 and 2i+2","i+1 only","3i","None"],"answer":"2i+1 and 2i+2"},
-    {"question":"Heapify helps maintain?","options":["Heap property","Graph edges","String length","Hash key"],"answer":"Heap property"}
+    {"question":"In Max Heap, root contains?","options":["Smallest","Largest","Middle","Random"],"answer":"Largest","explanation":"In a max heap, the largest element is always at the root."},
+    {"question":"Heap is commonly implemented using?","options":["Array","Linked list","Queue only","Graph"],"answer":"Array","explanation":"Heaps are commonly implemented as arrays for efficient access to parent and child nodes."},
+    {"question":"Priority queue often uses?","options":["Heap","Trie","Stack","String"],"answer":"Heap","explanation":"Priority queues are often implemented using heaps to efficiently get the highest or lowest priority element."},
+    {"question":"Children of index i are commonly at?","options":["2i+1 and 2i+2","i+1 only","3i","None"],"answer":"2i+1 and 2i+2","explanation":"In a heap stored as an array, the children of index i are at 2i+1 and 2i+2."},
+    {"question":"Heapify helps maintain?","options":["Heap property","Graph edges","String length","Hash key"],"answer":"Heap property","explanation":"The heapify process maintains the heap property after insertion or deletion."}
   ],
   "dynamic_programming_quiz": [
-    {"question":"DP mainly avoids solving?","options":["Unique problems","Overlapping subproblems repeatedly","Arrays","Graphs"],"answer":"Overlapping subproblems repeatedly"},
-    {"question":"DP uses memoization and?","options":["Tabulation","Rotation","Deletion","Traversal"],"answer":"Tabulation"},
-    {"question":"Fibonacci can be optimized using?","options":["DP","Heap only","Trie","Queue only"],"answer":"DP"},
-    {"question":"0/1 Knapsack is classic?","options":["DP problem","Graph only","Sorting only","Trie problem"],"answer":"DP problem"},
-    {"question":"Memoization stores?","options":["Computed results","Edges","Pointers only","Passwords"],"answer":"Computed results"}
+    {"question":"DP mainly avoids solving?","options":["Unique problems","Overlapping subproblems repeatedly","Arrays","Graphs"],"answer":"Overlapping subproblems repeatedly","explanation":"Dynamic Programming avoids recomputing overlapping subproblems by storing results."},
+    {"question":"DP uses memoization and?","options":["Tabulation","Rotation","Deletion","Traversal"],"answer":"Tabulation","explanation":"Tabulation is the bottom-up approach in dynamic programming using tables."},
+    {"question":"Fibonacci can be optimized using?","options":["DP","Heap only","Trie","Queue only"],"answer":"DP","explanation":"Dynamic Programming optimizes Fibonacci computation by storing previous results."},
+    {"question":"0/1 Knapsack is classic?","options":["DP problem","Graph only","Sorting only","Trie problem"],"answer":"DP problem","explanation":"The 0/1 Knapsack problem is a classic example of dynamic programming."},
+    {"question":"Memoization stores?","options":["Computed results","Edges","Pointers only","Passwords"],"answer":"Computed results","explanation":"Memoization stores computed results to avoid redundant calculations."}
   ],
   "trie_quiz": [
-    {"question":"Trie is mainly used for?","options":["Sorting numbers","Prefix search","Stack operations","Binary tree balancing"],"answer":"Prefix search"},
-    {"question":"Trie nodes commonly represent?","options":["Characters","Matrices","Queues","Integers only"],"answer":"Characters"},
-    {"question":"Autocomplete systems often use?","options":["Trie","Heap only","Stack","Graph"],"answer":"Trie"},
-    {"question":"Searching word in trie depends on?","options":["Word length","Total users only","Graph size","Heap height only"],"answer":"Word length"},
-    {"question":"Trie is efficient for many?","options":["Prefix queries","Sorting swaps","Stack pops","Heap deletes"],"answer":"Prefix queries"}
+    {"question":"Trie is mainly used for?","options":["Sorting numbers","Prefix search","Stack operations","Binary tree balancing"],"answer":"Prefix search","explanation":"Tries are commonly used for efficient prefix search operations in strings."},
+    {"question":"Trie nodes commonly represent?","options":["Characters","Matrices","Queues","Integers only"],"answer":"Characters","explanation":"Each node in a trie typically represents a character in the stored words."},
+    {"question":"Autocomplete systems often use?","options":["Trie","Heap only","Stack","Graph"],"answer":"Trie","explanation":"Tries are widely used in autocomplete systems for fast prefix lookups."},
+    {"question":"Searching word in trie depends on?","options":["Word length","Total users only","Graph size","Heap height only"],"answer":"Word length","explanation":"Searching in a trie depends on the length of the word, not the number of stored words."},
+    {"question":"Trie is efficient for many?","options":["Prefix queries","Sorting swaps","Stack pops","Heap deletes"],"answer":"Prefix queries","explanation":"Tries are highly efficient for handling multiple prefix queries on strings."}
   ]
 }

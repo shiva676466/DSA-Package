@@ -85,6 +85,14 @@ def run_quiz(questions, topic="general"):
         else:
             print(f"{RED}Wrong ❌{RESET} {YELLOW}(Correct: {q['answer']}){RESET}")
 
+        explanation = q.get("explanation")
+        if explanation:
+            print(f"{CYAN}Explanation:{RESET} {explanation}")
+        else:
+            print(f"{CYAN}Explanation:{RESET} The correct answer is {q['answer']} based on the concept being tested.")
+
+        input("Press Enter for next question...")
+
     percentage = round((score / total) * 100, 2)
 
     print()
