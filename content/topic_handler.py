@@ -59,7 +59,7 @@ def handle_topic(topic_name):
 
         elif choice == '4':
             quiz_questions = get_quiz(topic_name)
-            run_quiz(quiz_questions)
+            run_quiz(quiz_questions, topic_name)
 
         elif choice == '5':
             if topic_name == "arrays":

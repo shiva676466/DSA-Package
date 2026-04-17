@@ -1,5 +1,15 @@
 {
-    "score": 2,
+    "score": 0,
     "total": 2,
-    "percentage": 100.0
+    "percentage": 0.0,
+    "arrays": {
+        "score": 2,
+        "total": 2,
+        "percentage": 100.0
+    },
+    "stack": {
+        "score": 2,
+        "total": 2,
+        "percentage": 100.0
+    }
 }

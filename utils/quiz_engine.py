@@ -11,15 +11,28 @@ CYAN = "\033[96m"
 RESET = "\033[0m"
 
 
-def save_progress(score, total):
+def save_progress(score, total, topic="general"):
     os.makedirs("data", exist_ok=True)
-    data = {
+    file_path = "data/progress.json"
+
+    percentage = round((score / total) * 100, 2) if total else 0
+
+    if os.path.exists(file_path):
+        with open(file_path, "r") as file:
+            try:
+                data = json.load(file)
+            except:
+                data = {}
+    else:
+        data = {}
+
+    data[topic] = {
         "score": score,
         "total": total,
-        "percentage": round((score / total) * 100, 2) if total else 0
+        "percentage": percentage
     }
 
-    with open("data/progress.json", "w") as file:
+    with open(file_path, "w") as file:
         json.dump(data, file, indent=4)
 
 
@@ -37,7 +50,7 @@ def show_question_box(number, question, options):
     print(f"{BLUE}┗" + "━" * width + f"┛{RESET}")
 
 
-def run_quiz(questions):
+def run_quiz(questions, topic="general"):
     if not questions:
         print("\nNo quiz available for this topic.")
         return
@@ -82,4 +95,4 @@ def run_quiz(questions):
     print(f"{BLUE}┃ {CYAN}{('Percentage: ' + str(percentage) + '%').ljust(34)}{BLUE}┃{RESET}")
     print(f"{BLUE}┗" + "━" * 35 + f"┛{RESET}")
 
-    save_progress(score, total)
+    save_progress(score, total, topic)
