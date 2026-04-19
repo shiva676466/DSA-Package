@@ -137,6 +137,26 @@ DSA-PACKAGE/
 
 ---
 
+# 📸 Screenshots
+
+![Home Screen](assets/screenshots/home.png)
+
+---
+
+![Beginner Topics](assets/screenshots/beginner-level-topics.png)
+
+---
+
+![Questions](assets/screenshots/questions.png)
+
+---
+
+![Animation explanations](assets/screenshots/animations.png)
+
+---
+
+![Progress Bar](assets/screenshots/progress-bar.png)
+
 # 🧩 Module Wise Explanation
 
 ## 📄 main.py
