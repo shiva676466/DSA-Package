@@ -1,6 +1,6 @@
 # DSA Package ⚡
 
-A console-based **Data Structures & Algorithms Learning Platform** built in Python.
+A console-based **Data Structures & Algorithms Learning Platform** built in Python for students, beginners, and coding enthusiasts.
 
 This project helps users learn DSA through:
 
@@ -25,8 +25,8 @@ This project helps users learn DSA through:
 
 ## 🟡 Intermediate Level
 - Trees
-- Sorting
-- Searching
+- Sorting Algorithms
+- Searching Algorithms
 - Recursion
 
 ## 🔴 Advanced Level
@@ -34,6 +34,41 @@ This project helps users learn DSA through:
 - Heap
 - Dynamic Programming
 - Trie
+
+---
+
+# 🔄 Project Flowchart
+
+```text
+             ┌──────────────┐
+             │   Start App  │
+             └──────┬───────┘
+                    ↓
+          ┌──────────────────┐
+          │ Loading Screen   │
+          └────────┬─────────┘
+                   ↓
+          ┌──────────────────┐
+          │   Main Menu      │
+          └────────┬─────────┘
+                   ↓
+      ┌──────────────────────────┐
+      │ Select Level            │
+      │ Beginner / Int / Adv    │
+      └────────┬────────────────┘
+               ↓
+      ┌──────────────────────────┐
+      │ Select Topic            │
+      └────────┬────────────────┘
+               ↓
+   ┌───────────────────────────────┐
+   │ Theory / Code / Quiz / Visual │
+   └──────────────┬────────────────┘
+                  ↓
+             ┌──────────┐
+             │   Exit   │
+             └──────────┘
+```
 
 ---
 
@@ -52,6 +87,68 @@ DSA-PACKAGE/
 ├── utils/
 └── data/
 ```
+
+---
+
+# 🧩 Module Wise Explanation
+
+## 📄 main.py
+Handles project startup and launches the application.
+
+## 📄 menu.py
+Controls navigation menus and user choices.
+
+## 📄 levels.py
+Manages Beginner, Intermediate, and Advanced level routing.
+
+## 📁 topics/
+Contains topic-wise modules like Arrays, Trees, Graphs, etc.
+
+## 📁 content/
+Stores theory notes, explanations, and examples.
+
+## 📁 animations/
+Contains console animations and visual demos.
+
+## 📁 services/
+Reusable logic such as quiz systems and helper services.
+
+## 📁 utils/
+Utility functions for colors, formatting, and screen handling.
+
+## 📁 data/
+Stores static data, questions, and quiz content.
+
+---
+
+# 📚 Algorithm / Topic List
+
+## Core Data Structures
+- Arrays
+- Strings
+- Stack
+- Queue
+- Linked List
+- Trees
+- Heap
+- Trie
+- Graphs
+
+## Searching Algorithms
+- Linear Search
+- Binary Search
+
+## Sorting Algorithms
+- Bubble Sort
+- Selection Sort
+- Insertion Sort
+- Merge Sort
+- Quick Sort
+
+## Problem Solving Topics
+- Recursion
+- Dynamic Programming
+- Graph Traversal (BFS / DFS)
 
 ---
 
@@ -103,25 +200,31 @@ python3 main.py
 
 ---
 
-# 🧪 Example Flow
-
-```text
-Start App
-→ Select Level
-→ Select Topic
-→ Theory / Code / Questions / Quiz / Animation
-```
-
----
-
 # 🎯 Educational Purpose
 
 This project is designed for:
-   
+
 - Students learning DSA
 - Beginners practicing coding concepts
 - Quick revision of topics
 - Interactive console learning
+
+---
+
+# 🚀 Future Scope
+
+Planned improvements for upcoming versions:
+
+- ✅ User Login System
+- ✅ Progress Save Feature
+- ✅ Topic Completion Tracker
+- ✅ More Console Animations
+- ✅ Search Topics Feature
+- ✅ GUI Desktop Version
+- ✅ Web Version
+- ✅ AI Doubt Solver
+- ✅ Daily Quiz Mode
+- ✅ Leaderboard System
 
 ---
 
@@ -130,16 +233,6 @@ This project is designed for:
 **Shiva**
 
 GitHub: https://github.com/shiva676466
-
----
-
-# ⭐ Future Improvements
-
-- User progress tracking
-- More animations
-- Search topics
-- GUI version
-- Online leaderboard
 
 ---
 
