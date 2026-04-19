@@ -79,13 +79,60 @@ DSA-PACKAGE/
 │── main.py
 │── menu.py
 │── levels.py
+│── sample.py
+│── structure.txt
+│── README.md
+│── .gitignore
+│── firebase-key.json
+│
+├── animations/
+│   ├── arrays_anim.py
+│   ├── linked_list_anim.py
+│   ├── queue_anim.py
+│   └── stack_anim.py
+│
+├── content/
+│   ├── __init__.py
+│   ├── arrays.py
+│   ├── dynamic_programming.py
+│   ├── graphs.py
+│   ├── heap.py
+│   ├── linked_list.py
+│   ├── queue.py
+│   ├── recursion.py
+│   ├── searching.py
+│   ├── sorting.py
+│   ├── stacks.py
+│   ├── strings.py
+│   ├── topic_handler.py
+│   ├── trees.py
+│   └── trie.py
+│
+├── core/
+│
+├── data/
+│   ├── code.json
+│   ├── progress.json
+│   ├── questions.json
+│   └── theory.json
+│
+├── services/
+│   ├── __init__.py
+│   ├── ai_service.py
+│   ├── content_service.py
+│   └── quiz_service.py
 │
 ├── topics/
-├── content/
-├── animations/
-├── services/
-├── utils/
-└── data/
+│   ├── __init__.py
+│   ├── advanced.py
+│   ├── beginner.py
+│   └── intermediate.py
+│
+└── utils/
+    ├── file_handler.py
+    ├── progress.py
+    ├── quiz_engine.py
+    └── ui.py
 ```
 
 ---
