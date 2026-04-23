@@ -49,7 +49,7 @@ def exit_screen():
         bar += "█"
         print(f"\r{GREEN}[{bar:<20}]{RESET}", end="")
         time.sleep(0.06)
-
+ 
     print(f"\n\n{YELLOW}Goodbye 👋 See you again!{RESET}")
     time.sleep(1.5)
 
