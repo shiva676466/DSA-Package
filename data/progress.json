@@ -18,5 +18,10 @@
         "score": 1,
         "total": 2,
         "percentage": 50.0
+    },
+    "interview": {
+        "score": 3,
+        "total": 5,
+        "percentage": 60.0
     }
 }

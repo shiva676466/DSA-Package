@@ -1,4 +1,7 @@
 from levels import select_level
+from utils.quiz_engine import run_quiz
+# load interview questions directly from questions.json
+import random
 from utils.ui import box_menu
 import json
 import os
@@ -9,6 +12,21 @@ YELLOW = "\033[93m"
 RED = "\033[91m"
 CYAN = "\033[96m"
 RESET = "\033[0m"
+
+
+def get_all_questions():
+    file_path = "data/questions.json"
+    try:
+        with open(file_path, "r") as file:
+            data = json.load(file)
+    except Exception:
+        return []
+
+    questions = []
+    for key, value in data.items():
+        if key.endswith("_quiz") and isinstance(value, list):
+            questions.extend(value)
+    return questions
 
 
 def show_progress_chart():
@@ -59,13 +77,31 @@ def show_progress_chart():
     input("\nPress Enter to return...")
 
 
+def interview_mode():
+    print("\n🎯 INTERVIEW MODE\n")
+    print("You will get 5 random DSA questions.")
+    print("Try to answer under pressure!\n")
+    input("Press Enter to start...")
+
+    try:
+        questions = get_all_questions()
+    except:
+        print("Unable to load questions.")
+        input("Press Enter to return...")
+        return
+
+    random.shuffle(questions)
+    selected = questions[:5]
+    run_quiz(selected, "interview")
+
 
 def main_menu():
     while True:
         box_menu("DSA PACKAGE ⚡", [
             ("1", "Start"),
             ("2", "Progress Chart 📊"),
-            ("3", "Exit")
+            ("3", "Interview Mode 🎯"),
+            ("4", "Exit")
         ])
 
         choice = input("Enter choice: ")
@@ -76,6 +112,8 @@ def main_menu():
             print()
             show_progress_chart()
         elif choice == '3':
+            interview_mode()
+        elif choice == '4':
             print("Exiting....!")
             break
         else:
