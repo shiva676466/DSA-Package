@@ -3,6 +3,7 @@ from utils.quiz_engine import run_quiz
 # load interview questions directly from questions.json
 import random
 from utils.ui import box_menu
+import utils.ui as ui
 import json
 import os
 import time
@@ -180,6 +181,39 @@ def search_topic():
         input("\nPress Enter to return...")
 
 
+# --- Theme selector function ---
+def theme_selector():
+    print("\n🎨 SELECT THEME\n")
+    print("1. Default Blue")
+    print("2. Hacker Green")
+    print("3. Neon Purple")
+    print("4. Fire Red")
+    print("5. Light Mode")
+
+    choice = input("\nEnter choice: ").strip()
+
+    theme_map = {
+        "1": "default",
+        "2": "hacker",
+        "3": "neon",
+        "4": "fire",
+        "5": "light"
+    }
+
+    if choice not in theme_map:
+        print("Invalid choice.")
+        input("\nPress Enter to return...")
+        return
+
+    os.makedirs("data", exist_ok=True)
+    with open("data/theme.json", "w") as file:
+        json.dump({"theme": theme_map[choice]}, file, indent=4)
+
+    ui.apply_theme()
+    print("\nTheme updated successfully! 🎉")
+    input("\nPress Enter to return...")
+
+
 def main_menu():
     while True:
         streak = update_streak()
@@ -188,7 +222,8 @@ def main_menu():
             ("2", "Progress Chart 📊"),
             ("3", "Interview Mode 🎯"),
             ("4", "Search Topic 🔍"),
-            ("5", "Exit")
+            ("5", "Themes 🎨"),
+            ("6", "Exit")
         ])
 
         choice = input("Enter choice: ")
@@ -203,6 +238,8 @@ def main_menu():
         elif choice == '4':
             search_topic()
         elif choice == '5':
+            theme_selector()
+        elif choice == '6':
             print("Exiting....!")
             break
         else:
