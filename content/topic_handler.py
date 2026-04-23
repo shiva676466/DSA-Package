@@ -1,4 +1,5 @@
 import time
+import re
 from services.content_service import get_theory, get_questions, get_code
 from services.quiz_service import get_quiz
 from utils.quiz_engine import run_quiz
@@ -7,6 +8,34 @@ from animations.stack_anim import stack_animation
 from animations.queue_anim import queue_animation
 from animations.linked_list_anim import linked_list_animation
 from utils.ui import box_menu
+
+# ANSI colors
+RESET = "\033[0m"
+BLUE = "\033[94m"
+GREEN = "\033[92m"
+YELLOW = "\033[93m"
+CYAN = "\033[96m"
+MAGENTA = "\033[95m"
+
+
+def print_colored_code(code, lang):
+    keywords = {
+        "python": ["def", "return", "for", "in", "if", "else", "class", "print", "while", "import"],
+        "cpp": ["int", "return", "for", "if", "else", "while", "using", "namespace", "include", "cout", "class", "struct"],
+        "java": ["class", "public", "static", "void", "int", "return", "for", "if", "else", "import", "System"]
+    }
+
+    words = keywords.get(lang, [])
+
+    for line in code.splitlines():
+        line = re.sub(r'(".*?"|\'.*?\')', GREEN + r'\1' + RESET, line)
+        line = re.sub(r'\b(\d+)\b', YELLOW + r'\1' + RESET, line)
+
+        for word in words:
+            line = re.sub(rf'\b{word}\b', BLUE + word + RESET, line)
+
+        line = re.sub(r'(#include|#.*)', MAGENTA + r'\1' + RESET, line)
+        print(line)
 
 def type_text(text, delay=0.01):
     for ch in text:
@@ -56,7 +85,7 @@ def handle_topic(topic_name):
                 lang_key = "java"
 
             if code is not None:
-                print(code)
+                print_colored_code(code, lang_key)
                 print("\n1. Run Code ▶️")
                 print("2. Copy Code 📋")
                 print("3. Back")
