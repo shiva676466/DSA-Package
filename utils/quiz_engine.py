@@ -1,6 +1,9 @@
 import json
 import os
 import time
+import firebase_admin
+from firebase_admin import credentials, firestore
+from datetime import datetime
 
 # ANSI color constants
 BLUE = "\033[94m"
@@ -9,6 +12,18 @@ YELLOW = "\033[93m"
 RED = "\033[91m"
 CYAN = "\033[96m"
 RESET = "\033[0m"
+
+# Firebase initialization
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FIREBASE_KEY_PATH = os.path.join(BASE_DIR, "firebase-key.json")
+
+try:
+    if not firebase_admin._apps:
+        cred = credentials.Certificate(FIREBASE_KEY_PATH)
+        firebase_admin.initialize_app(cred)
+    db = firestore.client()
+except Exception:
+    db = None
 
 
 def save_progress(score, total, topic="general"):
@@ -35,6 +50,24 @@ def save_progress(score, total, topic="general"):
     with open(file_path, "w") as file:
         json.dump(data, file, indent=4)
 
+
+def save_to_firebase(score, total, topic="general"):
+    if db is None:
+        print(f"{RED}Firebase not initialized.{RESET}")
+        return
+
+    try:
+        percentage = round((score / total) * 100, 2) if total else 0
+        db.collection("quiz_scores").add({
+            "topic": topic,
+            "score": score,
+            "total": total,
+            "percentage": percentage,
+            "timestamp": datetime.now().isoformat()
+        })
+        print(f"{GREEN}Score saved to Firebase cloud ✅{RESET}")
+    except Exception as e:
+        print(f"{RED}Firebase save failed: {e}{RESET}")
 
 
 def show_question_box(number, question, options):
@@ -104,3 +137,4 @@ def run_quiz(questions, topic="general"):
     print(f"{BLUE}┗" + "━" * 35 + f"┛{RESET}")
 
     save_progress(score, total, topic)
+    save_to_firebase(score, total, topic)

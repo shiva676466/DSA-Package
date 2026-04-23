@@ -6,6 +6,7 @@ from utils.ui import box_menu
 import json
 import os
 import time
+from datetime import datetime, timedelta
 
 GREEN = "\033[92m"
 YELLOW = "\033[93m"
@@ -27,6 +28,48 @@ def get_all_questions():
         if key.endswith("_quiz") and isinstance(value, list):
             questions.extend(value)
     return questions
+
+
+def update_streak():
+    file_path = "data/streak.json"
+    today = datetime.now().date()
+
+    if os.path.exists(file_path):
+        try:
+            with open(file_path, "r") as file:
+                data = json.load(file)
+        except:
+            data = {}
+    else:
+        data = {}
+
+    last_opened = data.get("last_opened")
+    streak = data.get("streak", 0)
+
+    if last_opened:
+        try:
+            last_date = datetime.strptime(last_opened, "%Y-%m-%d").date()
+        except:
+            last_date = today
+    else:
+        last_date = today
+
+    if last_opened is None:
+        streak = 1
+    elif today == last_date:
+        pass
+    elif today == last_date + timedelta(days=1):
+        streak += 1
+    else:
+        streak = 1
+
+    with open(file_path, "w") as file:
+        json.dump({
+            "last_opened": str(today),
+            "streak": streak
+        }, file, indent=4)
+
+    return streak
 
 
 def show_progress_chart():
@@ -77,6 +120,7 @@ def show_progress_chart():
     input("\nPress Enter to return...")
 
 
+
 def interview_mode():
     print("\n🎯 INTERVIEW MODE\n")
     print("You will get 5 random DSA questions.")
@@ -95,13 +139,56 @@ def interview_mode():
     run_quiz(selected, "interview")
 
 
+# --- Search topic function ---
+def search_topic():
+    query = input("\nEnter topic name to search: ").strip().lower()
+
+    topic_map = {
+        "arrays": ("content.arrays", "arrays_content"),
+        "array": ("content.arrays", "arrays_content"),
+        "strings": ("content.strings", "strings_content"),
+        "string": ("content.strings", "strings_content"),
+        "stack": ("content.stacks", "stacks_content"),
+        "stacks": ("content.stacks", "stacks_content"),
+        "queue": ("content.queue", "queue_content"),
+        "linked list": ("content.linked_list", "linked_list_content"),
+        "linkedlist": ("content.linked_list", "linked_list_content"),
+        "tree": ("content.trees", "trees_content"),
+        "trees": ("content.trees", "trees_content"),
+        "sorting": ("content.sorting", "sorting_content"),
+        "searching": ("content.searching", "searching_content"),
+        "graphs": ("content.graphs", "graphs_content"),
+        "graph": ("content.graphs", "graphs_content"),
+        "heap": ("content.heap", "heap_content"),
+        "dp": ("content.dynamic_programming", "dynamic_programming_content"),
+        "dynamic programming": ("content.dynamic_programming", "dynamic_programming_content"),
+        "trie": ("content.trie", "trie_content"),
+        "recursion": ("content.recursion", "recursion_content")
+    }
+
+    if query not in topic_map:
+        print("Topic not found.")
+        input("\nPress Enter to return...")
+        return
+
+    try:
+        module_name, func_name = topic_map[query]
+        module = __import__(module_name, fromlist=['*'])
+        getattr(module, func_name)()
+    except Exception:
+        print("Unable to open topic.")
+        input("\nPress Enter to return...")
+
+
 def main_menu():
     while True:
-        box_menu("DSA PACKAGE ⚡", [
+        streak = update_streak()
+        box_menu(f"DSA PACKAGE ⚡  🔥 Streak: {streak} Day(s)", [
             ("1", "Start"),
             ("2", "Progress Chart 📊"),
             ("3", "Interview Mode 🎯"),
-            ("4", "Exit")
+            ("4", "Search Topic 🔍"),
+            ("5", "Exit")
         ])
 
         choice = input("Enter choice: ")
@@ -114,6 +201,8 @@ def main_menu():
         elif choice == '3':
             interview_mode()
         elif choice == '4':
+            search_topic()
+        elif choice == '5':
             print("Exiting....!")
             break
         else:
