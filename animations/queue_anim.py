@@ -147,6 +147,7 @@ def isempty_animation(queue):
     pause(2)
 
 
+
 def queue_animation():
     queue = []
 
