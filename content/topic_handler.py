@@ -1,4 +1,7 @@
 import time
+import tempfile
+import subprocess
+import os
 from services.content_service import get_theory, get_questions, get_code
 from services.quiz_service import get_quiz
 from utils.quiz_engine import run_quiz
@@ -13,6 +16,64 @@ def type_text(text, delay=0.01):
         print(ch, end="", flush=True)
         time.sleep(delay)
     print()
+
+
+def run_sample_code(code, lang):
+    try:
+        if lang == "python":
+            exec(code, {})
+            return
+
+        elif lang == "cpp":
+            with tempfile.TemporaryDirectory() as temp_dir:
+                cpp_file = os.path.join(temp_dir, "main.cpp")
+                exe_file = os.path.join(temp_dir, "main")
+
+                with open(cpp_file, "w") as f:
+                    f.write(code)
+
+                compile_result = subprocess.run(
+                    ["g++", cpp_file, "-o", exe_file],
+                    capture_output=True,
+                    text=True
+                )
+
+                if compile_result.returncode != 0:
+                    print("Compilation Error:\n", compile_result.stderr)
+                    return
+
+                run_result = subprocess.run([exe_file], capture_output=True, text=True)
+                print(run_result.stdout)
+                return
+
+        elif lang == "java":
+            with tempfile.TemporaryDirectory() as temp_dir:
+                java_file = os.path.join(temp_dir, "Main.java")
+
+                with open(java_file, "w") as f:
+                    f.write(code)
+
+                compile_result = subprocess.run(
+                    ["javac", java_file],
+                    capture_output=True,
+                    text=True,
+                    cwd=temp_dir
+                )
+
+                if compile_result.returncode != 0:
+                    print("Compilation Error:\n", compile_result.stderr)
+                    return
+
+                run_result = subprocess.run(
+                    ["java", "Main"],
+                    capture_output=True,
+                    text=True,
+                    cwd=temp_dir
+                )
+                print(run_result.stdout)
+                return
+    except Exception as e:
+        print("Run failed:", e)
 
 def handle_topic(topic_name):
     while True:
@@ -42,12 +103,37 @@ def handle_topic(topic_name):
 
             lang = input("Choose language: ")
 
+            code = ""
+            lang_name = ""
+            lang_key = ""
+
             if lang == '1':
-                print(get_code(topic_name, "python"))
+                code = get_code(topic_name, "python")
+                lang_name = "Python"
+                lang_key = "python"
             elif lang == '2':
-                print(get_code(topic_name, "cpp"))
+                code = get_code(topic_name, "cpp")
+                lang_name = "C++"
+                lang_key = "cpp"
             elif lang == '3':
-                print(get_code(topic_name, "java"))
+                code = get_code(topic_name, "java")
+                lang_name = "Java"
+                lang_key = "java"
+            else:
+                input("\nInvalid choice. Press Enter to return...")
+                continue
+
+            print(f"\n{lang_name} Code:\n")
+            print(code)
+
+            print("\n1. Run Code ▶️")
+            print("2. Back")
+            run_choice = input("Choose option: ")
+
+            if run_choice == '1':
+                print("\nOutput:\n")
+                run_sample_code(code, lang_key)
+
             input("\nPress Enter to return to menu...")
 
         elif choice == '3':
