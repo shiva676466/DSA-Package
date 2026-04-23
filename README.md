@@ -45,20 +45,20 @@ This project helps users learn DSA through:
              └──────┬───────┘
                     ↓
           ┌──────────────────┐
-          │ Loading Screen   │
+          │  Loading Screen  │
           └────────┬─────────┘
                    ↓
           ┌──────────────────┐
-          │   Main Menu      │
+          │     Main Menu    │
           └────────┬─────────┘
                    ↓
       ┌──────────────────────────┐
-      │ Select Level             │
-      │ Beginner / Int / Adv     │
+      │    Select Level          │
+      │    Beginner / Int / Adv  │
       └──────---──┬──────────────┘
                   ↓
       ┌──────────────────────────┐
-      │ Select Topic             │
+      │       Select Topic       │
       └───────---─┬─────────────-┘
                   ↓
    ┌───────────────────────────────┐
