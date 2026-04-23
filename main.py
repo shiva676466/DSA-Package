@@ -14,6 +14,7 @@ def clear():
     os.system("cls" if os.name == "nt" else "clear")
 
 
+
 def type_text(text, color=RESET, delay=0.05):
     for ch in text:
         print(f"{color}{ch}{RESET}", end="", flush=True)
