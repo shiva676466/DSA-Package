@@ -214,6 +214,47 @@ def theme_selector():
     input("\nPress Enter to return...")
 
 
+def weak_topic_analyzer():
+    file_path = "data/progress.json"
+
+    if not os.path.exists(file_path):
+        print("\nNo progress data found.")
+        input("\nPress Enter to return...")
+        return
+
+    try:
+        with open(file_path, "r") as file:
+            data = json.load(file)
+    except:
+        data = {}
+
+    if not data:
+        print("\nNo progress yet.")
+        input("\nPress Enter to return...")
+        return
+
+    results = []
+    for topic, info in data.items():
+        if isinstance(info, dict):
+            percent = int(info.get("percentage", 0))
+        else:
+            percent = int(info) if str(info).isdigit() else 0
+        results.append((topic, percent))
+
+    results.sort(key=lambda x: x[1])
+
+    print("\n🧠 WEAK TOPIC ANALYZER\n")
+
+    limit = min(3, len(results))
+    for i in range(limit):
+        topic, percent = results[i]
+        print(f"{i+1}. {topic.upper():15} - {percent}%")
+
+    weakest_topic = results[0][0]
+    print(f"\nRecommendation: Practice {weakest_topic.upper()} today. 🎯")
+    input("\nPress Enter to return...")
+
+
 def main_menu():
     while True:
         streak = update_streak()
@@ -223,7 +264,8 @@ def main_menu():
             ("3", "Interview Mode 🎯"),
             ("4", "Search Topic 🔍"),
             ("5", "Themes 🎨"),
-            ("6", "Exit")
+            ("6", "Weak Topic Analyzer 🧠"),
+            ("7", "Exit")
         ])
 
         choice = input("Enter choice: ")
@@ -240,6 +282,8 @@ def main_menu():
         elif choice == '5':
             theme_selector()
         elif choice == '6':
+            weak_topic_analyzer()
+        elif choice == '7':
             print("Exiting....!")
             break
         else:
