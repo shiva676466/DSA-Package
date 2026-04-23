@@ -83,7 +83,7 @@ def show_question_box(number, question, options):
     print(f"{BLUE}┗" + "━" * width + f"┛{RESET}")
 
 
-def run_quiz(questions, topic="general"):
+def run_quiz(questions, topic="general", timed=False, time_limit=20):
     if not questions:
         print("\nNo quiz available for this topic.")
         return
@@ -94,9 +94,15 @@ def run_quiz(questions, topic="general"):
     for i, q in enumerate(questions, start=1):
         print()
         show_question_box(i, q['question'], q['options'])
+        if timed:
+            print(f"{YELLOW}⏱️ Time Limit: {time_limit} seconds{RESET}")
 
         while True:
+            start_time = time.time()
             choice = input("Enter your choice: ").strip()
+            if timed and (time.time() - start_time) > time_limit:
+                print(f"{RED}Time's Up! ❌{RESET}")
+                choice = "0"
 
             if not choice.isdigit():
                 print(f"{RED}Please enter a valid number ❌{RESET}")
@@ -110,7 +116,7 @@ def run_quiz(questions, topic="general"):
 
             break
 
-        selected_option = q["options"][choice - 1]
+        selected_option = q["options"][choice - 1] if choice != 0 else None
 
         if selected_option == q["answer"]:
             print(f"{GREEN}Correct ✅{RESET}")
@@ -124,7 +130,10 @@ def run_quiz(questions, topic="general"):
         else:
             print(f"{CYAN}Explanation:{RESET} The correct answer is {q['answer']} based on the concept being tested.")
 
-        input("Press Enter for next question...")
+        if i == total:
+            input("Press Enter to go back...")
+        else:
+            input("Press Enter for next question...")
 
     percentage = round((score / total) * 100, 2)
 

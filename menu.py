@@ -137,7 +137,7 @@ def interview_mode():
 
     random.shuffle(questions)
     selected = questions[:5]
-    run_quiz(selected, "interview")
+    run_quiz(selected, "interview", timed=True, time_limit=20)
 
 
 # --- Search topic function ---
@@ -220,7 +220,7 @@ def main_menu():
         box_menu(f"DSA PACKAGE ⚡  🔥 Streak: {streak} Day(s)", [
             ("1", "Start"),
             ("2", "Progress Chart 📊"),
-            ("3", "Interview Mode 🎯"),
+            ("3", "Timed Interview Mode ⏱️"),
             ("4", "Search Topic 🔍"),
             ("5", "Themes 🎨"),
             ("6", "Exit")
