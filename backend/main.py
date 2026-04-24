@@ -2,8 +2,7 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.routes import router
-
+from routes import router
 app = FastAPI(
     title="DSA Package API",
     description="Backend API for DSA learning platform",
