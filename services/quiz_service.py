@@ -1,8 +1,7 @@
 from utils.file_handler import load_json
 import requests
 
-API_BASE = "http://127.0.0.1:8000"
-
+API_BASE = "https://dsa-package-api.onrender.com"
 
 def get_quiz(topic):
     """

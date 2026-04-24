@@ -18,8 +18,7 @@ RESET = "\033[0m"
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FIREBASE_KEY_PATH = os.path.join(BASE_DIR, "firebase-key.json")
 
-API_BASE = "http://127.0.0.1:8000"
-
+API_BASE = "https://dsa-package-api.onrender.com"
 try:
     if not firebase_admin._apps:
         cred = credentials.Certificate(FIREBASE_KEY_PATH)
