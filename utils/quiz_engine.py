@@ -1,6 +1,7 @@
 import json
 import os
 import time
+import requests
 import firebase_admin
 from firebase_admin import credentials, firestore
 from datetime import datetime
@@ -16,6 +17,8 @@ RESET = "\033[0m"
 # Firebase initialization
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FIREBASE_KEY_PATH = os.path.join(BASE_DIR, "firebase-key.json")
+
+API_BASE = "http://127.0.0.1:8000"
 
 try:
     if not firebase_admin._apps:
@@ -68,6 +71,24 @@ def save_to_firebase(score, total, topic="general"):
         print(f"{GREEN}Score saved to Firebase cloud ✅{RESET}")
     except Exception as e:
         print(f"{RED}Firebase save failed: {e}{RESET}")
+
+
+# Save to backend API
+def save_to_backend(score, total, topic="general", username="shiva"):
+    try:
+        payload = {
+            "username": username,
+            "topic": topic,
+            "score": score,
+            "total": total
+        }
+        response = requests.post(f"{API_BASE}/score", json=payload, timeout=3)
+        if response.status_code == 200:
+            print(f"{GREEN}Score synced to backend API ✅{RESET}")
+        else:
+            print(f"{RED}Backend sync failed.{RESET}")
+    except Exception:
+        print(f"{YELLOW}Backend offline. Saved locally only.{RESET}")
 
 
 def show_question_box(number, question, options):
@@ -147,3 +168,4 @@ def run_quiz(questions, topic="general", timed=False, time_limit=20):
 
     save_progress(score, total, topic)
     save_to_firebase(score, total, topic)
+    save_to_backend(score, total, topic)
